@@ -1,0 +1,29 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+<g stroke-width="5px" style="fill:none; stroke:rgb(0,61,255);">
+  <path d="
+  	M 000,000
+    v +20
+    v -20
+    h +20" />
+  <path d="
+  	M 000,100
+    v -20
+    v +20
+    h +20" />
+  <path d="
+  	M 100,000
+    v +20
+    v -20
+    h -20" />
+  <path d="
+  	M 100,100
+    v -20
+    v +20
+    h -20" />
+</g>
+
+<g stroke-width="0px" style="stroke:none; fill:rgb(0,61,255);">
+	<rect x="5" y="5" width="90" height="90"/>
+</g>
+
+</svg> 
