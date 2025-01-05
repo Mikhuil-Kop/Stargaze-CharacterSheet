@@ -52,18 +52,6 @@
     all: initial;
 }
 
-.sheet-stargaze .repcontrol_add {
-
-}
-
-.sheet-stargaze .repcontrol_edit {
-
-}
-
-.sheet-stargaze .repcontrol_del {
-
-}
-
 /* #endregion */
 
 /* #region Variables */
@@ -103,6 +91,7 @@
     --Block4: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block4.svg");
     --Block5: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block5.svg");
     --Block6: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block6.svg");
+    --Block7: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block7.svg");
 
     --Frame1: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Frame1.svg");
     --Frame2: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Frame2.svg");
@@ -126,11 +115,14 @@
     height: 100%;
     width: 100%;
     color: #dbddde;
+
+    min-width: 700px;
 }
 
 .sheet-stargaze .sheet-content{
     height: 100%;
     width: 100%;
+    min-width: 750px;
 }
 
 /* #endregion */
@@ -185,6 +177,15 @@
     border-image-outset: 8px;
 }
 
+.sheet-stargaze .sheet-block_alt_half{
+    margin: 5px;
+
+    border-image-source: var(--Block7);
+    border-image-slice: 45% fill;
+    border-image-width: 32px;
+    border-image-outset: 8px;
+}
+
 .sheet-stargaze .sheet-block_list{
     margin: 5px;
 
@@ -218,7 +219,7 @@
 .sheet-stargaze .sheet-input_big{
     font-family: monospace, 'Monaco', system-ui;
 
-    margin: 5px;
+    margin: 2.5px;
     padding: 5px;
 
     color: white;
@@ -355,30 +356,6 @@
     background: #ffffff90; 
 }
 
-.sheet-stargaze .sheet-button_text{
-    all: initial;
-
-    background: none;
-    border: none;
-    outline: none;
-    outline: solid rgb(0, 0, 0, 0) 1px;
-    box-shadow: none;
-
-    font-family: monospace, 'Monaco', system-ui;
-    font-size: 10pt;
-    font-weight: bold;
-    color: #dbddde;
-    padding: 0;
-
-    text-decoration: underline dotted rgb(3, 3, 3);
-    transition: 0.5s;
-}
-
-.sheet-stargaze .sheet-button_text:active{
-    text-decoration: underline dotted white;
-    transition: 0.5s;
-}
-
 .sheet-stargaze  h1{
     font-size: 14pt;
     font-weight: 600;
@@ -448,6 +425,7 @@
     color: #767676;
 }
 
+.sheet-stargaze .btn,
 .sheet-stargaze .sheet-button {
     color: white;
 
@@ -457,7 +435,7 @@
     display: inline-block;
     position: relative;
 
-    padding: 10px;
+    padding: 5px;
 
     top: -6px;
     right: -3px;
@@ -473,12 +451,14 @@
     transition: 0.1s;
 }
 
+.sheet-stargaze .btn:not():hover,
 .sheet-stargaze .sheet-button:hover {
     color: white;
     background-color: #ffffff35;
     outline: none;
 }
 
+.sheet-stargaze .btn:focus,
 .sheet-stargaze .sheet-button:focus {
     color: white;
     background-color: #ffffff35;
@@ -487,6 +467,7 @@
     border-radius: 0px;
 }
 
+.sheet-stargaze .btn:active,
 .sheet-stargaze .sheet-button:active {
     top: 0px;
     right: 0px;
@@ -502,6 +483,30 @@
     margin: 2.5px;
     width: 25px;
     height: 25px;
+}
+
+.sheet-stargaze .sheet-button_text{
+    all: initial;
+
+    background: none;
+    border: none;
+    outline: none;
+    outline: solid rgb(0, 0, 0, 0) 1px;
+    box-shadow: none;
+
+    font-family: monospace, 'Monaco', system-ui;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #dbddde;
+    padding: 0;
+
+    text-decoration: underline dotted rgb(3, 3, 3);
+    transition: 0.5s;
+}
+
+.sheet-stargaze .sheet-button_text:active{
+    text-decoration: underline dotted white;
+    transition: 0.5s;
 }
 
 /* #endregion */
@@ -573,25 +578,61 @@
     padding: 5px;
     padding-top: 20px;
 
-    overflow: scroll;
+    overflow: hidden;
     width: calc(100% - 10px);
     height: calc(100% - 15px);
 }
 
-.sheet-stargaze .sheet-repeating-area::-webkit-scrollbar {
+.sheet-stargaze .sheet-repeating-area .repcontainer {
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+}
+
+.sheet-stargaze .sheet-repeating-area .repcontrol {
+    margin-top: 10px;
+}
+
+.sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar {
     width: 4px;
 }
 
-.sheet-stargaze .sheet-repeating-area::-webkit-scrollbar-button {
+.sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar-button {
     display: none;
 }
 
-.sheet-stargaze .sheet-repeating-area::-webkit-scrollbar-track {
+.sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-.sheet-stargaze .sheet-repeating-area::-webkit-scrollbar-thumb {
+.sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar-thumb {
     background: #ffffff90; 
+}
+
+.sheet-stargaze .repcontrol_add{
+    background-color: #00ff3725;
+}
+
+.sheet-stargaze .repcontrol_add:active,
+.sheet-stargaze .repcontrol_add:hover{
+    background-color: #acffbe25
+}
+
+.sheet-stargaze .repcontrol_edit{
+    background-color: #ff9d0025
+}
+
+.sheet-stargaze .repcontrol_edit:active,
+.sheet-stargaze .repcontrol_edit:hover{
+    background-color: #ffe0af25
+}
+
+.sheet-stargaze .repcontrol_del{
+    background-color: #ff000025
+}
+
+.sheet-stargaze .repcontrol_del:active,
+.sheet-stargaze .repcontrol_del:hover{
+    background-color: #ffc1c125
 }
 
 .sheet-stargaze .sheet-repeating-area_item{
@@ -612,70 +653,63 @@
 .sheet-stargaze .sheet-repeating-area_item_text-area{
     margin: 2.5pt;
     width: calc(100% - 20pt);
+
+    height: 45px;
 }
 
 
-.sheet-stargaze .sheet-repeating-area_status{
+.sheet-stargaze .sheet-repeating-area_action{
 
 }
 
-.sheet-repeating-area_item_status{
+.sheet-stargaze .sheet-repeating-area_item_action{
     display: grid;
     grid-template-columns: 1fr 35px;
     grid-template-rows: 35px 35px 30px 1fr;
 }
 
-.sheet-repeating-area_item_status > *:nth-child(1){
+.sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(1){
     grid-row: 1;
     grid-column: 1;
 }
-.sheet-repeating-area_item_status > *:nth-child(2){
+
+.sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(2){
     grid-row: 1;
     grid-column: 2;
 }
-.sheet-repeating-area_item_status > *:nth-child(3){
+.sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(3){
     grid-row: 2;
     grid-column: 1 / 3;
 }
-.sheet-repeating-area_item_status > *:nth-child(4){
+.sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(4){
     grid-row: 3;
     grid-column: 1 / 3;
 }
-.sheet-repeating-area_item_status > *:nth-child(5){
+.sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(5){
     grid-row: 4;
     grid-column: 1 / 3;
 }
 
-.sheet-repeating-area_property{
-
+.sheet-stargaze .sheet-repeating-area_property {
 }
 
-.sheet-repeating-area_item_property{
+.sheet-stargaze .sheet-repeating-area_item_property{
     display: grid;
     grid-template-columns: 1fr 35px;
     grid-template-rows: 35px 1fr;
 }
 
-.sheet-repeating-area_item_property > *:nth-child(1){
+.sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(1){
     grid-row: 1;
     grid-column: 1;
 }
-.sheet-repeating-area_item_property > *:nth-child(2){
+.sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(2){
     grid-row: 1;
     grid-column: 2;
 }
-.sheet-repeating-area_item_property > *:nth-child(3){
+.sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(3){
     grid-row: 2;
     grid-column: 1 / 3;
-}
-
-.sheet-stargaze .sheet-repcontrol_add{
-}
-
-.sheet-stargaze .sheet-repcontrol_edit{
-}
-
-.sheet-stargaze .sheet-repcontrol_del{
 }
 
 /* #endregion */
@@ -808,23 +842,36 @@
 }
 
 .sheet-stargaze .sheet-page_main_header{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-self: flex-start;
+
     padding: 5px;
 
     width: calc(100% - 20px);
     height: calc(100% - 10px);
 }
 
+.sheet-stargaze .sheet-header-space{
+    flex-grow: 1;
+}
+
 .sheet-stargaze .sheet-header-input{
+    flex-grow: 0;
+
     display: inline-block;
     vertical-align: top;
+    align-self: right;
     margin: 5px;
     
     width: 60px;
     height: 90px;
 }
 
+.ui-dialog .sheet-stargaze input.sheet-header-input_input_single,
 .sheet-stargaze .sheet-header-input_input_single{
     text-align: center;
+    height: initial;
     height: 50px;
     width: 50px;
     margin: 0px;
@@ -833,6 +880,7 @@
 
 .sheet-stargaze .sheet-header-input_input_double{
     text-align: center;
+    height: initial;
     height: 15px;
     width: 50px;
     margin: 0px;
@@ -841,7 +889,6 @@
 
 .sheet-stargaze .sheet-header-input_caption{
     text-align: center;
-    position: absolute;
     width: 65px;
     height: 20px;
     margin: 0px;

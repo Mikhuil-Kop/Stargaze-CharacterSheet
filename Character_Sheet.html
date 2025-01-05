@@ -30,49 +30,50 @@
             </div>
             <div class="sheet-page_main sheet-block_giant">
                 <div class="sheet-page_main_header sheet-block_big">
-                    <div class="sheet-header-input">
+                    <div class="sheet-header-input sheet-header-input_left">
                         <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_health">
                         <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_health_max">
                         <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Здоровье}} {{description=Проверка характеристики}} {{roll1=@{health}}} {{roll2=@{health_max}}}">[ ЗДР ]</button>
                     </div>
-                    <div class="sheet-header-input">
+                    <div class="sheet-header-input sheet-header-input_left">
                         <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_armor">
                         <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_armor_max">
                         <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Броня}} {{description=Проверка характеристики}} {{roll1=@{armor}}} {{roll2=@{armor_max}}}">[ БРН ]</button>
                     </div>
-                    <div class="sheet-header-input">
+                    <div class="sheet-header-input sheet-header-input_left">
                         <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_stamina">
                         <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_stamina_max">
                         <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Выносливость}} {{description=Проверка характеристики}} {{roll1=@{stamina}}} {{roll2=@{stamina_max}}}">[ ВЫН ]</button>
                     </div>
-                    <div class="sheet-header-input">
+                    <div class="sheet-header-input sheet-header-input_left">
                         <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_speed">
                         <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Скорость}} {{description=Боевая проверка}} {{roll1=@{speed}}}">[ СКР ]</button>
                     </div>
-                    <div class="sheet-header-input">
+                    <div class="sheet-header-input sheet-header-input_left">
                         <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_initiative">
                         <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Инициатива}} {{description=Боевая проверка}}{{roll1=[[d20 + @{initiative}]]}}">[ ИНИ ]</button>
                     </div>
-                    <div class="sheet-header-input">
+                    <div class="sheet-header-space"></div>
+                    <div class="sheet-header-input sheet-header-input_left">
                         <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_accshot">
                         <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Точная стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{accshot}]]}}">[ ТС ]</button>
                     </div>
-                    <div class="sheet-header-input">
+                    <div class="sheet-header-input sheet-header-input_right">
                         <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_quickshot">
                         <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Быстрая стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{quickshot}]]}}">[ БС ]</button>
                     </div>
-                    <div class="sheet-header-input">
+                    <div class="sheet-header-input sheet-header-input_right">
                         <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_melee">
                         <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Ближний бой}} {{description=Боевая проверка}}{{roll1=[[d20 + @{melee}]]}}">[ ББ ]</button>
                     </div>
-                    <div class="sheet-header-input">
+                    <div class="sheet-header-input sheet-header-input_right">
                         <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_hack">
                         <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Взлом}} {{description=Боевая проверка}}{{roll1=[[d20 + @{hack}]]}}">[ ВЗ ]</button>
                     </div>
                 </div>
                 <div class="sheet-page_main_body">
                     <div class="sheet-stats_area">
-                        <div class="sheet-stats-block sheet-block_alt">
+                        <div class="sheet-stats-block sheet-block_alt_half">
                             <div class="sheet-stats-block_title-conatiner sheet-stats-block_title-conatiner_body">
                                 <input class="sheet-stats-block_value sheet-input_big" type="text" name="attr_body">
                                 <button class="sheet-stats-block_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Телосложение}} {{description=Проверка характеристики}}{{roll1=[[d20 + @{body}]]}}">Телосложение</button>
@@ -105,7 +106,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sheet-stats-block sheet-block_alt">
+                        <div class="sheet-stats-block sheet-block_alt_half">
                             <div class="sheet-stats-block_title-conatiner sheet-stats-block_title-conatiner_nerv">
                                 <input class="sheet-stats-block_value sheet-input_big" type="text" name="attr_nerv">
                                 <button class="sheet-stats-block_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Нервная система}} {{description=Проверка характеристики}}{{roll1=[[d20 + @{nerv}]]}}">Нервная система</button>
@@ -137,7 +138,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sheet-stats-block sheet-block_alt">
+                        <div class="sheet-stats-block sheet-block_alt_half">
                             <div class="sheet-stats-block_title-conatiner sheet-stats-block_title-conatiner_mind">
                                 <input class="sheet-stats-block_value sheet-input_big" type="text" name="attr_mind">
                                 <button class="sheet-stats-block_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Разум}} {{description=Проверка характеристики}}{{roll1=[[d20 + @{mind}]]}}">Разум</button>
@@ -170,7 +171,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sheet-stats-block sheet-block_alt">
+                        <div class="sheet-stats-block sheet-block_alt_half">
                             <div class="sheet-stats-block_title-conatiner sheet-stats-block_title-conatiner_psyc">
                                 <input class="sheet-stats-block_value sheet-input_big" type="text" name="attr_psyc">
                                 <button class="sheet-stats-block_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Психика}} {{description=Проверка характеристики}}{{roll1=[[d20 + @{psyc}]]}}">Психика</button>
@@ -215,10 +216,10 @@
                             </fieldset>
                         </div>
                     </div>
-                    <div class="sheet-statuses_area sheet-block_list">
-                        <div class="sheet-repeating-area sheet-repeating-area_status">
-                            <fieldset class="repeating_statuses">
-                                <div class="sheet-repeating-area_item sheet-repeating-area_item_status sheet-block_alt">
+                    <div class="sheet-actions_area sheet-block_list">
+                        <div class="sheet-repeating-area sheet-repeating-area_action">
+                            <fieldset class="repeating_actions">
+                                <div class="sheet-repeating-area_item sheet-repeating-area_item_action sheet-block_alt">
                                     <input class="sheet-repeating-area_item_header sheet-input_mid" type="text" name="attr_spellname1" placeholder="Название статуса">
                                     <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:default} {{name=Hello}}"></button>
                                     <input class="sheet-repeating-area_item_header sheet-input_mid" type="text" name="attr_spellname1" placeholder="Время действия">
