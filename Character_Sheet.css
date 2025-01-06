@@ -1,65 +1,81 @@
 /* #region Temp */
 
-/**/html, body,
-.charactersheet {
-    height: calc(100% - 25px);
+html, body,
+.ui-dialog .charactersheet {
     width: calc(100% - 15px);
+    height: calc(100% - 25px);
     background-color: #000000;
+    background-image: var(--Back3);
     background-repeat: repeat;
     background-size: 32px;
-    background-image: var(--Back3);
     animation: 4s linear infinite page-background;
 }
 
 @keyframes page-background {
-    from {background-position-x: 0px;}
-    to {background-position-x: 32px;}
+    from { background-position-x: 0px; }
+    to { background-position-x: 32px; }
 }
 
 /* #endregion */
 
 /* #region Roll20 */
 
-.ui-dialog .charsheet{
+.ui-dialog .sheet-stargaze  *{
+    all: initial;
     scrollbar-color: initial;
 }
 
-.sheet-stargaze fieldset{
-    border: none;
+.ui-dialog .sheet-stargaze fieldset {
     margin: 0px;
     padding: 0px;
+    border: none;
 }
 
 .ui-dialog .sheet-stargaze input {
+    box-sizing: initial;
     height: initial;
     vertical-align: initial;
-    box-sizing: initial;
 }
 
-.ui-dialog .charsheet button[type=roll], .ui-dialog .charsheet button[type=compendium],
+.ui-dialog .charsheet button[type=roll], 
+.ui-dialog .charsheet button[type=compendium],
 .ui-dialog .sheet-stargaze .btn {
+    box-sizing: initial;
     height: initial;
     vertical-align: initial;
-    box-sizing: initial;
     font: initial;
-
     font-family: monospace, 'Monaco', system-ui;
     font-size: 10pt;
-    color: white;
+    color: #dbddde;
 }
 
 .ui-dialog .charsheet button[type=roll]:before {
     all: initial;
 }
 
+.ui-dialog::-webkit-scrollbar {
+    width: 4px;
+}
+
+.ui-dialog::-webkit-scrollbar-button {
+    display: none;
+}
+
+.ui-dialog::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.ui-dialog::-webkit-scrollbar-thumb {
+    background: #ffffff90;
+}
+
 /* #endregion */
 
 /* #region Variables */
 
-:root{
+:root {
     --main-text-color: #dbddde;
     --dim-text-color: #999999;
-
     --main-background: #cccccc;
     --edges-width: 2.5px;
     --edges-size: 20px;
@@ -67,7 +83,6 @@
     --edges-color-half: #cccccc64;
     --edges-small-width: 2.5px;
     --edges-small-size: 7px;
-
     --body-light: #d16c6c;
     --body-dark: #8e2b2b;
     --nerv-light: #ccbf78;
@@ -76,15 +91,12 @@
     --mind-dark: #2b5e8e;
     --psyc-light: #775fc8;
     --psyc-dark: #5d2b8e;
-    
     --Back1: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Back1.svg");
     --Back2: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Back2.svg");
     --Back3: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Back3.svg");
-
     --Bar1: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Bar1.svg");
     --Bar2: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Bar2.svg");
     --Bar3: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Bar3.svg");
-
     --Block1: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block1.svg");
     --Block2: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block2.svg");
     --Block3: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block3.svg");
@@ -92,13 +104,10 @@
     --Block5: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block5.svg");
     --Block6: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block6.svg");
     --Block7: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block7.svg");
-
     --Frame1: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Frame1.svg");
     --Frame2: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Frame2.svg");
-
     --Button1: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Button1.svg");
     --Button2: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Button2.svg");
-
     --Pattern1: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternBody.svg");
     --Pattern2: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternNerv.svg");
     --Pattern3: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternMind.svg");
@@ -109,106 +118,103 @@
 
 /* #region General */
 
-.sheet-stargaze .sheet-base{
+.ui-dialog .sheet-stargaze {
+    width: 100%;
+    height: 100%;
+    min-width: 700px;
     font-family: monospace, 'Monaco', system-ui;
     font-size: 10pt;
-    height: 100%;
-    width: 100%;
     color: #dbddde;
-
-    min-width: 700px;
 }
 
-.sheet-stargaze .sheet-content{
-    height: 100%;
+.ui-dialog .sheet-stargaze .sheet-content {
     width: 100%;
+    height: 100%;
     min-width: 750px;
+    font-family: monospace, 'Monaco', system-ui;
+    font-size: 10pt;
+    color: #dbddde;
 }
 
 /* #endregion */
 
 /* #region Common */
 
-.sheet-stargaze .sheet-block_giant{
-    margin: 5px;
+/*---------------------------------------------------------------------------
+ * Groups
+ *---------------------------------------------------------------------------*/
 
+.ui-dialog .sheet-stargaze .sheet-block_giant {
+    margin: 5px;
+    background-color: #000000;
+    background-image: var(--Back2);
+    background-repeat: repeat;
+    background-size: 32px;
     border-image-source: var(--Block6);
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
-
-    background-image: var(--Back2);
-    background-color: #000000;
-    background-repeat: repeat;
-    background-size: 32px;
     animation: 4s linear infinite page-background;
 }
 
-.sheet-stargaze .sheet-block_solid{
+.ui-dialog .sheet-stargaze .sheet-block_solid {
     margin: 5px;
-
+    background-color: #000000;
+    background-image: var(--Back2);
+    background-repeat: repeat;
+    background-size: 32px;
     border-image-source: var(--Block6);
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
-
-    background-image: var(--Back2);
-    background-color: #000000;
-    background-repeat: repeat;
-    background-size: 32px;
     animation: 4s linear infinite body-background;
 }
 
-.sheet-stargaze .sheet-block_big{
+.ui-dialog .sheet-stargaze .sheet-block_big {
     margin: 5px;
-
     border-image-source: var(--Block1);
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
 }
 
-.sheet-stargaze .sheet-block_alt{
+.ui-dialog .sheet-stargaze .sheet-block_alt {
     margin: 5px;
-
     border-image-source: var(--Block2);
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
 }
 
-.sheet-stargaze .sheet-block_alt_half{
+.ui-dialog .sheet-stargaze .sheet-block_alt_half {
     margin: 5px;
-
     border-image-source: var(--Block7);
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
 }
 
-.sheet-stargaze .sheet-block_list{
+.ui-dialog .sheet-stargaze .sheet-block_list {
     margin: 5px;
-
+    padding-top: 20px;
     border-image-source: var(--Block4);
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
 }
 
-.sheet-stargaze .sheet-block_small{
+.ui-dialog .sheet-stargaze .sheet-block_small {
     margin: 5px;
     padding: 5px;
-
     border-image-source: var(--Block3);
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
 }
 
-.sheet-stargaze .sheet-frame_simple{
+.ui-dialog .sheet-stargaze .sheet-frame_simple {
     margin: 5px;
     padding: 5px;
-
     background: none;
     border-image-source: var(--Frame1);
     border-image-slice: 25% fill;
@@ -216,295 +222,321 @@
     border-image-outset: 16px;
 }
 
-.sheet-stargaze .sheet-input_big{
-    font-family: monospace, 'Monaco', system-ui;
+/*---------------------------------------------------------------------------
+ * Inputs
+ *---------------------------------------------------------------------------*/
 
+.ui-dialog .sheet-stargaze .sheet-input_big,
+.ui-dialog .sheet-stargaze .sheet-input_mid,
+.ui-dialog .sheet-stargaze .sheet-input_small,
+.ui-dialog .sheet-stargaze .sheet-input_none,
+.ui-dialog .sheet-stargaze .sheet-text-area  {
+    font-family: monospace, 'Monaco', system-ui;
+    font-size: 10pt;
+    color: #dbddde;
+}
+
+.ui-dialog .sheet-stargaze .sheet-input_big {
     margin: 2.5px;
     padding: 5px;
-
     color: white;
     outline: none;
-
     background: none;
     border-image-source: var(--Block3);
     border-image-slice: 22% fill;
     border-image-width: 15px;
     border-image-outset: 8px;
+    font-family: monospace, 'Monaco', system-ui;
 }
 
-.sheet-stargaze .sheet-input_big::placeholder{
+.ui-dialog .sheet-stargaze .sheet-input_big::placeholder {
     font-family: monospace, 'Monaco', system-ui;
     color: #ffffff60;
 }
 
-.sheet-stargaze .sheet-input_big::selection{
+.ui-dialog .sheet-stargaze .sheet-input_big::selection {
     color: black;
     background-color: white;
 }
 
-.sheet-stargaze .sheet-input_big:focus{
+.ui-dialog .sheet-stargaze .sheet-input_big:focus {
     background-color: #ffffff20;
     transition: 0.3s;
 }
 
-.sheet-stargaze .sheet-input_mid{
-    font-family: monospace, 'Monaco', system-ui;
-
+.ui-dialog .sheet-stargaze .sheet-input_mid {
     margin: 5px;
     padding: 5px;
-
     color: white;
     outline: none;
-    transition: 0.3s;
-    
     background: none;
     border-image-source: var(--Bar3);
     border-image-slice: 33% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
+    font-family: monospace, 'Monaco', system-ui;
+    transition: 0.3s;
 }
 
-.sheet-stargaze .sheet-input_mid::placeholder{
+.ui-dialog .sheet-stargaze .sheet-input_mid::placeholder {
     color: #ffffff60;
 }
 
-.sheet-stargaze .sheet-input_mid::selection{
+.ui-dialog .sheet-stargaze .sheet-input_mid::selection {
     color: black;
     background-color: white;
 }
 
-.sheet-stargaze .sheet-input_mid:focus{
+.ui-dialog .sheet-stargaze .sheet-input_mid:focus {
     background-color: #ffffff20;
     transition: 0.3s;
 }
 
-.sheet-stargaze .sheet-input_small{
-    font-family: monospace, 'Monaco', system-ui;
-
+.ui-dialog .sheet-stargaze .sheet-input_small {
     margin: 5px;
     padding: 5px;
-
     color: white;
     outline: none;
-
     background: none;
     border-image-source: var(--Bar3);
     border-image-slice: 33% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
+    font-family: monospace, 'Monaco', system-ui;
 }
 
-.sheet-stargaze .sheet-input_small::placeholder{
+.ui-dialog .sheet-stargaze .sheet-input_small::placeholder {
     color: #ffffff60;
 }
 
-.sheet-stargaze .sheet-input_small::selection{
+.ui-dialog .sheet-stargaze .sheet-input_small::selection {
     color: black;
     background-color: white;
 }
 
-.sheet-stargaze .sheet-input_small:focus{
+.ui-dialog .sheet-stargaze .sheet-input_small:focus {
     background-color: #ffffff20;
     transition: 0.3s;
 }
 
-.sheet-stargaze .sheet-text-area{
-    font-family: monospace, 'Monaco', system-ui;
-    
+.ui-dialog .sheet-stargaze .sheet-input_none::placeholder,
+.ui-dialog .sheet-stargaze .sheet-input_none::selection,
+.ui-dialog .sheet-stargaze .sheet-input_none:focus,
+.ui-dialog .sheet-stargaze .sheet-input_none {
+    user-select: none;
+    margin: 2.5px;
+    padding: 5px;
+    outline: none;
+    background: none;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.ui-dialog .sheet-stargaze .sheet-input_none::-webkit-scrollbar,
+.ui-dialog .sheet-stargaze .sheet-input_none::-webkit-scrollbar-track,
+.ui-dialog .sheet-stargaze .sheet-input_none::-webkit-scrollbar-thumb,
+.ui-dialog .sheet-stargaze .sheet-input_none::-webkit-scrollbar-button {
+    width: 0px;
+}
+
+.ui-dialog .sheet-stargaze .sheet-text-area {
     margin: 5px;
     padding: 10px;
-
     color: white;
     outline: none;
-
     background: none;
     resize: none;
-
     border-image-source: var(--Block3);
     border-image-slice: 33% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
+    font-family: monospace, 'Monaco', system-ui;
 }
 
-.sheet-stargaze .sheet-text-area::placeholder{
+.ui-dialog .sheet-stargaze .sheet-text-area::placeholder {
     color: #ffffff60;
 }
 
-.sheet-stargaze .sheet-text-area::selection{
+.ui-dialog .sheet-stargaze .sheet-text-area::selection {
     color: black;
     background-color: white;
 }
 
-.sheet-stargaze .sheet-text-area:focus{
+.ui-dialog .sheet-stargaze .sheet-text-area:focus {
     background-color: #ffffff20;
     transition: 0.3s;
 }
 
-.sheet-stargaze .sheet-text-area::-webkit-scrollbar {
+.ui-dialog .sheet-stargaze .sheet-input_none::-webkit-scrollbar,
+.ui-dialog .sheet-stargaze .sheet-text-area::-webkit-scrollbar {
     width: 4px;
 }
 
-.sheet-stargaze .sheet-text-area::-webkit-scrollbar-button {
+.ui-dialog .sheet-stargaze .sheet-input_none::-webkit-scrollbar-button,
+.ui-dialog .sheet-stargaze .sheet-text-area::-webkit-scrollbar-button {
     display: none;
 }
 
-.sheet-stargaze .sheet-text-area::-webkit-scrollbar-track {
+.ui-dialog .sheet-stargaze .sheet-input_none::-webkit-scrollbar-track,
+.ui-dialog .sheet-stargaze .sheet-text-area::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-.sheet-stargaze .sheet-text-area::-webkit-scrollbar-thumb {
-    background: #ffffff90; 
+.ui-dialog .sheet-stargaze .sheet-input_none::-webkit-scrollbar-thumb,
+.ui-dialog .sheet-stargaze .sheet-text-area::-webkit-scrollbar-thumb {
+    background: #ffffff90;
 }
 
-.sheet-stargaze  h1{
+/*---------------------------------------------------------------------------
+ * Text
+ *---------------------------------------------------------------------------*/
+
+.ui-dialog .sheet-stargaze h1 {
     font-size: 14pt;
     font-weight: 600;
     line-height: 100%;
 }
 
-.sheet-stargaze  h2{
+.ui-dialog .sheet-stargaze h2 {
     font-size: 12pt;
     font-weight: 600;
     line-height: 100%;
 }
 
-.sheet-stargaze  h3{
+.ui-dialog .sheet-stargaze h3 {
     font-size: 10pt;
     font-weight: 600;
     line-height: 100%;
 }
 
-.sheet-stargaze  h3{
+.ui-dialog .sheet-stargaze h3 {
     font-size: 10pt;
     font-weight: 600;
     line-height: 100%;
     color: #5f5f5f;
 }
 
-.sheet-stargaze  p{
+.ui-dialog .sheet-stargaze p {
     font-size: 10pt;
     line-height: 150%;
 }
 
-.sheet-stargaze  a{
+.ui-dialog .sheet-stargaze a {
     font-size: 10pt;
 }
 
-.sheet-stargaze  strong{
+.ui-dialog .sheet-stargaze strong {
     font-size: 10pt;
     font-weight: 600;
 }
 
-.sheet-stargaze .sheet-table_static{
+/*---------------------------------------------------------------------------
+ * Tables
+ *---------------------------------------------------------------------------*/
+
+.ui-dialog .sheet-stargaze .sheet-table_static {
     margin: 5px;
     width: calc(100% - 10px);
     border-collapse: collapse;
-
     color: white;
 }
 
-.sheet-stargaze .sheet-table_static .sheet-table_header{
+.ui-dialog .sheet-stargaze .sheet-table_static .sheet-table_header {
     background: rgba(95, 95, 95, 0.25);
     font-weight: bold;
     min-width: 10px;
 }
 
-.sheet-stargaze .sheet-table_static .sheet-table_left{
+.ui-dialog .sheet-stargaze .sheet-table_static .sheet-table_left {
     text-align: left;
 }
 
-.sheet-stargaze .sheet-table_static .sheet-table_right{
+.ui-dialog .sheet-stargaze .sheet-table_static .sheet-table_right {
     text-align: right;
 }
 
-.sheet-stargaze .sheet-table_static .sheet-table_bold{
+.ui-dialog .sheet-stargaze .sheet-table_static .sheet-table_bold {
     color: white;
 }
 
-.sheet-stargaze .sheet-table_static .sheet-table_dim{
+.ui-dialog .sheet-stargaze .sheet-table_static .sheet-table_dim {
     color: #767676;
 }
 
-.sheet-stargaze .btn,
-.sheet-stargaze .sheet-button {
-    color: white;
+/*---------------------------------------------------------------------------
+ * Buttons
+ *---------------------------------------------------------------------------*/
 
-    border: none;
-    outline: none;
-
+.ui-dialog .sheet-stargaze .btn,
+.ui-dialog .sheet-stargaze .sheet-button {
     display: inline-block;
     position: relative;
-
     padding: 5px;
-
     top: -6px;
     right: -3px;
-
+    border: none;
     border-radius: 0px;
-
+    outline: none;
     background: none;
     background-color: #ffffff25;
-
     box-shadow: -3px 6px 0px #ffffff10;
     text-shadow: none;
-
+    font-family: monospace, 'Monaco', system-ui;
+    font-size: 10pt;
+    color: #dbddde;
     transition: 0.1s;
 }
 
-.sheet-stargaze .btn:not():hover,
-.sheet-stargaze .sheet-button:hover {
-    color: white;
+.ui-dialog .sheet-stargaze .btn:not():hover,
+.ui-dialog .sheet-stargaze .sheet-button:hover {
     background-color: #ffffff35;
     outline: none;
 }
 
-.sheet-stargaze .btn:focus,
-.sheet-stargaze .sheet-button:focus {
-    color: white;
+.ui-dialog .sheet-stargaze .btn:focus,
+.ui-dialog .sheet-stargaze .sheet-button:focus {
     background-color: #ffffff35;
     outline: none;
     border: none;
     border-radius: 0px;
 }
 
-.sheet-stargaze .btn:active,
-.sheet-stargaze .sheet-button:active {
+.ui-dialog .sheet-stargaze .btn:active,
+.ui-dialog .sheet-stargaze .sheet-button:active {
     top: 0px;
     right: 0px;
     box-shadow: 0px 0px 0px #ffffff10;
     border: none;
     border-radius: 0px;
-
     transition: 0.1s;
 }
 
-.sheet-stargaze .sheet-button_small-roll[type=roll],
-.sheet-stargaze .sheet-button_small-roll {
+.ui-dialog .sheet-stargaze .sheet-button_small-roll[type=roll],
+.ui-dialog .sheet-stargaze .sheet-button_small-roll {
     margin: 2.5px;
-    width: 25px;
-    height: 25px;
+    padding: 0px;
+    width: 30px;
+    height: 30px;
 }
 
-.sheet-stargaze .sheet-button_text{
+.ui-dialog .sheet-stargaze .sheet-button_text {
     all: initial;
-
     background: none;
     border: none;
     outline: none;
     outline: solid rgb(0, 0, 0, 0) 1px;
     box-shadow: none;
-
     font-family: monospace, 'Monaco', system-ui;
     font-size: 10pt;
     font-weight: bold;
     color: #dbddde;
     padding: 0;
-
     text-decoration: underline dotted rgb(3, 3, 3);
     transition: 0.5s;
 }
 
-.sheet-stargaze .sheet-button_text:active{
+.ui-dialog .sheet-stargaze .sheet-button_text:active {
     text-decoration: underline dotted white;
     transition: 0.5s;
 }
@@ -513,7 +545,7 @@
 
 /* #region Selects */
 
-.sheet-select_small {
+.ui-dialog .sheet-select_small {
     margin: 2.5px;
     width: calc(100% - 7.5px);
     height: calc(100% - 2.5px);
@@ -521,52 +553,42 @@
     padding-right: 2.5px;
 }
 
-.sheet-select_small select {
+.ui-dialog .sheet-select_small select {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-
     -webkit-appearance: none;
     appearance: none;
-
     background-color: #c9c9c921;
-
     color: white;
-
     border-radius: 0px;
     box-shadow: none;
     border: none;
     outline: none;
-
     padding-left: 7.5px;
-
     font-family: monospace, 'Monaco', system-ui;
-
     color: white;
+    font-size: 10pt;
     outline: none;
     transition: 0.3s;
-    
     background: none;
-    
     border-image-source: var(--Bar1);
     border-image-slice: 33% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
 }
 
-.sheet-select_small select:focus {
+.ui-dialog .sheet-select_small select:focus {
     background-color: #404040;
 }
 
-.sheet-select_small::after {
+.ui-dialog .sheet-select_small::after {
     position: absolute;
-    
     width: 20px;
     height: 20px;
     vertical-align: middle;
-
     content: var(--Icon1);
 }
 
@@ -574,140 +596,164 @@
 
 /* #region Repeating Areas */
 
-.sheet-stargaze .sheet-repeating-area{
+.ui-dialog .sheet-stargaze .sheet-repeating-area {
+    display: block;
     padding: 5px;
-    padding-top: 20px;
-
-    overflow: hidden;
-    width: calc(100% - 10px);
+    width: calc(100% - 15px);
     height: calc(100% - 15px);
 }
 
-.sheet-stargaze .sheet-repeating-area .repcontainer {
-    height: calc(100% - 40px);
+.ui-dialog .sheet-stargaze .sheet-repeating-area .repcontainer {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    padding-right: 15px;
+    margin-right: -10px;
+    height: calc(100% - 20px);
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-.sheet-stargaze .sheet-repeating-area .repcontrol {
+.ui-dialog .sheet-stargaze .sheet-repeating-area .repcontrol {
     margin-top: 10px;
 }
 
-.sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar {
+.ui-dialog .sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar {
     width: 4px;
 }
 
-.sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar-button {
+.ui-dialog .sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar-button {
     display: none;
 }
 
-.sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar-track {
+.ui-dialog .sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-.sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar-thumb {
-    background: #ffffff90; 
+.ui-dialog .sheet-stargaze .sheet-repeating-area .repcontainer::-webkit-scrollbar-thumb {
+    background: #ffffff90;
 }
 
-.sheet-stargaze .repcontrol_add{
+.ui-dialog .sheet-stargaze .repcontrol_add {
     background-color: #00ff3725;
 }
 
-.sheet-stargaze .repcontrol_add:active,
-.sheet-stargaze .repcontrol_add:hover{
-    background-color: #acffbe25
+.ui-dialog .sheet-stargaze .repcontrol_add:active,
+.ui-dialog .sheet-stargaze .repcontrol_add:hover {
+    background-color: #acffbe25;
 }
 
-.sheet-stargaze .repcontrol_edit{
-    background-color: #ff9d0025
+.ui-dialog .sheet-stargaze .repcontrol_edit {
+    background-color: #ff9d0025;
 }
 
-.sheet-stargaze .repcontrol_edit:active,
-.sheet-stargaze .repcontrol_edit:hover{
-    background-color: #ffe0af25
+.ui-dialog .sheet-stargaze .repcontrol_edit:active,
+.ui-dialog .sheet-stargaze .repcontrol_edit:hover {
+    background-color: #ffe0af25;
 }
 
-.sheet-stargaze .repcontrol_del{
-    background-color: #ff000025
+.ui-dialog .sheet-stargaze .repcontrol_del {
+    background-color: #ff000025;
 }
 
-.sheet-stargaze .repcontrol_del:active,
-.sheet-stargaze .repcontrol_del:hover{
-    background-color: #ffc1c125
+.ui-dialog .sheet-stargaze .repcontrol_del:active,
+.ui-dialog .sheet-stargaze .repcontrol_del:hover {
+    background-color: #ffc1c125;
 }
 
-.sheet-stargaze .sheet-repeating-area_item{
-    margin: 5pt;
-    padding: 5pt;
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item {
+    margin: 5px;
+    padding: 5px;
+    width: calc(100% - 10px);
 }
 
-.sheet-stargaze .sheet-repeating-area_item_header{
-    margin: 2.5pt;
-    width: calc(100% - 15pt);
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_header {
+    margin: 2.5px;
+    width: calc(100% - 15px);
 }
 
-.sheet-stargaze .sheet-repeating-area_item_input{
-    margin: 2.5pt;
-    width: calc(100% - 15pt);
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_input {
+    margin: 2.5px;
+    width: calc(100% - 15px);
 }
 
-.sheet-stargaze .sheet-repeating-area_item_text-area{
-    margin: 2.5pt;
-    width: calc(100% - 20pt);
-
-    height: 45px;
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_text-area {
+    margin: 2.5px;
+    width: calc(100% - 20px);
+    height: 47px;
 }
 
-
-.sheet-stargaze .sheet-repeating-area_action{
-
+.ui-dialog .sheet-stargaze .sheet-repeating-area_preview {
+    display: block;
+    margin: 5px;
+    padding: 0px;
+    width: calc(100%);
+    min-height: 200px;
 }
 
-.sheet-stargaze .sheet-repeating-area_item_action{
+.ui-dialog .sheet-stargaze .sheet-repeating-area_preview span {
+    display: block;
+    margin: 2.5px;
+    padding: 5px;
+    height: calc(100% - 10px);
+    width: calc(100% - 15px);
+    font-size: 8pt;
+}
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_action {
+}
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_action {
     display: grid;
     grid-template-columns: 1fr 35px;
     grid-template-rows: 35px 35px 30px 1fr;
 }
 
-.sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(1){
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(1) {
     grid-row: 1;
     grid-column: 1;
 }
 
-.sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(2){
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(2) {
     grid-row: 1;
     grid-column: 2;
 }
-.sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(3){
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(3) {
     grid-row: 2;
     grid-column: 1 / 3;
 }
-.sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(4){
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(4) {
     grid-row: 3;
     grid-column: 1 / 3;
 }
-.sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(5){
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(5) {
     grid-row: 4;
     grid-column: 1 / 3;
 }
 
-.sheet-stargaze .sheet-repeating-area_property {
+.ui-dialog .sheet-stargaze .sheet-repeating-area_property {
 }
 
-.sheet-stargaze .sheet-repeating-area_item_property{
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_property {
     display: grid;
     grid-template-columns: 1fr 35px;
     grid-template-rows: 35px 1fr;
 }
 
-.sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(1){
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(1) {
     grid-row: 1;
     grid-column: 1;
 }
-.sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(2){
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(2) {
     grid-row: 1;
     grid-column: 2;
 }
-.sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(3){
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(3) {
     grid-row: 2;
     grid-column: 1 / 3;
 }
@@ -716,80 +762,78 @@
 
 /* #region Animations */
 
-.sheet-stargaze .sheet-falling-text_big{
+.ui-dialog .sheet-stargaze .sheet-falling-text_big {
     position: relative;
     top: 30px;
     animation-name: keyframes_falling-text_big;
-    animation-duration : 5s;
+    animation-duration: 5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
-.sheet-stargaze .sheet-falling-text_big::before{
+.ui-dialog .sheet-stargaze .sheet-falling-text_big::before {
     font-family: monospace, 'Monaco', system-ui;
     font-size: 8px;
-    line-height: 3;    color: rgb(160, 160, 160);
+    line-height: 3;
+    color: rgb(160, 160, 160);
     content: var(--big-fake-text);
 }
 
-@keyframes keyframes_falling-text_big{
+@keyframes keyframes_falling-text_big {
     from { top: -300px; }
-    to   { top: 50px; }
+    to { top: 50px; }
 }
 
-.sheet-stargaze .sheet-anim_sliding-line{
+.ui-dialog .sheet-stargaze .sheet-anim_sliding-line {
     height: 2px;
     width: 100%;
-
     background-color: gray;
 }
 
-.sheet-stargaze .sheet-anim_sliding-line > div{
+.ui-dialog .sheet-stargaze .sheet-anim_sliding-line > div {
     height: 4px;
     width: 2px;
-
     background-color: white;
-
     position: absolute;
     top: 0px;
     margin: 0px;
     padding: 0px;
-
     animation-name: keyframes_anim_sliding-line_item;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
-.sheet-stargaze .sheet-anim_sliding-line > .rand1{
+.ui-dialog .sheet-stargaze .sheet-anim_sliding-line > .rand1 {
     animation-delay: 1s;
     animation-duration: 10s;
 }
 
-.sheet-stargaze .sheet-anim_sliding-line > .rand2{
+.ui-dialog .sheet-stargaze .sheet-anim_sliding-line > .rand2 {
     animation-delay: 2s;
     animation-duration: 9s;
 }
 
-.sheet-stargaze .sheet-anim_sliding-line > .rand3{
+.ui-dialog .sheet-stargaze .sheet-anim_sliding-line > .rand3 {
     animation-delay: 0s;
     animation-duration: 13.5s;
 }
 
-.sheet-stargaze .sheet-anim_sliding-line > .rand4{
+.ui-dialog .sheet-stargaze .sheet-anim_sliding-line > .rand4 {
     animation-delay: 1s;
     animation-duration: 18.3s;
 }
 
-.sheet-stargaze .sheet-anim_sliding-line > .rand5{
+.ui-dialog .sheet-stargaze .sheet-anim_sliding-line > .rand5 {
     animation-delay: 2s;
     animation-duration: 7.3s;
 }
 
-.sheet-stargaze .sheet-anim_sliding-line > .rand6{
+.ui-dialog .sheet-stargaze .sheet-anim_sliding-line > .rand6 {
     animation-delay: 1s;
     animation-duration: 8.6s;
 }
-@keyframes keyframes_anim_sliding-line_item{
+
+@keyframes keyframes_anim_sliding-line_item {
     0% { left: 0%; }
     50% { left: 100%; }
     100% { left: 0%; }
@@ -799,18 +843,15 @@
 
 /* #region Tooltip */
 
-.sheet-tooltip{
+.ui-dialog .sheet-tooltip {
     position: absolute;
-
     color: darkblue;
-
     zoom: 100%;
     transition: 0.2s 0.2s;
 }
 
-*:has(> .sheet-tooltip):hover .sheet-tooltip{
+.ui-dialog *:has(> .sheet-tooltip):hover .sheet-tooltip {
     color: red;
-
     zoom: 0%;
     transition: 0.2s 0.2s;
 }
@@ -819,57 +860,62 @@
 
 /* #region Header */
 
-.sheet-character-sheet-header{
-
+.ui-dialog .sheet-header {
+    display: flex;
+    align-items: flex-start;
 }
 
-.sheet-character-sheet-header_input{
+.ui-dialog .sheet-header_input {
+    flex-grow: 1;
+    min-width: 100px;
+}
 
+.ui-dialog .sheet-header_space {
+    flex-grow: 3;
+}
+
+.ui-dialog .sheet-header_toggles {
+    flex-grow: 0;
+    margin-top: 10px;
 }
 
 /* #endregion */
 
 /* #region Main Page */
 
-.sheet-stargaze .sheet-page_main{
-    grid-template-rows: 100px 750px auto;
-    gap: 15px;
+.ui-dialog .sheet-stargaze .sheet-page_main {
+    grid-template-rows: 100px 720px 250px;
+    gap: 5px;
     height: 100%;
     width: calc(100% - 20px);
-
-    margin-top: 15px;
     padding: 5px;
 }
 
-.sheet-stargaze .sheet-page_main_header{
+.ui-dialog .sheet-stargaze .sheet-page_main_header {
     display: flex;
     flex-wrap: nowrap;
     justify-self: flex-start;
-
     padding: 5px;
-
     width: calc(100% - 20px);
     height: calc(100% - 10px);
 }
 
-.sheet-stargaze .sheet-header-space{
+.ui-dialog .sheet-stargaze .sheet-header-space {
     flex-grow: 1;
 }
 
-.sheet-stargaze .sheet-header-input{
+.ui-dialog .sheet-stargaze .sheet-header-input {
     flex-grow: 0;
-
     display: inline-block;
     vertical-align: top;
     align-self: right;
     margin: 5px;
-    
     width: 60px;
     height: 90px;
 }
 
 .ui-dialog .sheet-stargaze input.sheet-header-input_input_single,
-.sheet-stargaze .sheet-header-input_input_single{
+.ui-dialog .sheet-stargaze .sheet-header-input_input_single {
     text-align: center;
     height: initial;
     height: 50px;
@@ -878,7 +924,7 @@
     margin-bottom: 5px;
 }
 
-.sheet-stargaze .sheet-header-input_input_double{
+.ui-dialog .sheet-stargaze .sheet-header-input_input_double {
     text-align: center;
     height: initial;
     height: 15px;
@@ -887,25 +933,24 @@
     margin-bottom: 5px;
 }
 
-.sheet-stargaze .sheet-header-input_caption{
+.ui-dialog .sheet-stargaze .sheet-header-input_caption {
     text-align: center;
     width: 65px;
     height: 20px;
     margin: 0px;
     padding-left: -5px;
     padding-right: -5px;
-
     font-family: monospace, 'Monaco', system-ui;
 }
 
-.sheet-stargaze .sheet-page_main_body{
+.ui-dialog .sheet-stargaze .sheet-page_main_body {
     display: grid;
     grid-template-columns: 350px auto auto;
     height: 100%;
     width: 100%;
 }
 
-.sheet-stargaze .sheet-page_main_footer{
+.ui-dialog .sheet-stargaze .sheet-page_main_footer {
     display: grid;
     grid-template-columns: auto auto auto 300px;
     gap: 5px;
@@ -913,29 +958,31 @@
     width: 100%;
 }
 
-.sheet-stargaze .sheet-stats_area{
-    height: 750px;
+.ui-dialog .sheet-stargaze .sheet-stats_area {
+    display: block;
+    height: calc(720px - 30px);
 }
 
-.sheet-stargaze .sheet-properties_area{
-    height: 750px;
+.ui-dialog .sheet-stargaze .sheet-properties_area {
+    display: block;
+    height: calc(720px - 30px);
 }
 
-.sheet-stargaze .sheet-actions_area{
-    height: 750px;
+.ui-dialog .sheet-stargaze .sheet-actions_area {
+    display: block;
+    height: 100%;
+    height: calc(720px - 30px);
 }
 
-.sheet-stargaze .sheet-footer-area{
+.ui-dialog .sheet-stargaze .sheet-footer-area {
     margin: 0px;
 }
 
-.sheet-stargaze .sheet-footer_area_title{
+.ui-dialog .sheet-stargaze .sheet-footer_area_title {
     width: calc(100% - 20px);
     margin: 0px 0px 5px 6px;
     padding: 0px 5px 0px 5px;
-
     font-weight: bold;
-
     background: none;
     border-image-source: var(--Bar2);
     border-image-slice: 33% fill;
@@ -943,7 +990,7 @@
     border-image-outset: 8px;
 }
 
-.sheet-stargaze .sheet-footer_area_text{
+.ui-dialog .sheet-stargaze .sheet-footer_area_text {
     margin: 0px;
     height: calc(100% - 50px);
     width: calc(100% - 20px);
@@ -953,197 +1000,183 @@
 
 /* #region Stats Area */
 
-.sheet-stats-block{
+.ui-dialog .sheet-stargaze .sheet-stats-block {
     display: grid;
     grid-template-rows: auto auto;
     margin: 5pt;
     padding: 5pt;
 }
 
-.sheet-stats-block_title-conatiner{
+.ui-dialog .sheet-stargaze .sheet-stats-block_title-conatiner {
     font-weight: bold;
-    padding: 2.5pt 2.5pt 2.5pt 5pt;
+    padding: 2.5px 2.5px 2.5px 5pt;
     margin: -5pt -5pt 5pt -5pt;
 }
 
-.sheet-stats-block_items-container{
+.ui-dialog .sheet-stargaze .sheet-stats-block_items-container {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
 }
 
-.sheet-stats-block_title{
+.ui-dialog .sheet-stargaze .sheet-stats-block_title {
     display: inline-block;
-    margin: 2.5pt;
+    margin: 2.5px;
     height: 18pt;
 }
 
-.sheet-stats-block_value{
+.ui-dialog .sheet-stargaze .sheet-stats-block_value {
     display: inline-block;
-    margin: 2.5pt;
+    margin: 2.5px;
     width: 16pt;
     height: 16pt;
     text-align: center;
     border-radius: 0px;
 }
 
-.sheet-stats-block_item{
+.ui-dialog .sheet-stargaze .sheet-stats-block_item {
     display: inline-block;
 }
 
-.sheet-stats-block_item_title{
+.ui-dialog .sheet-stargaze .sheet-stats-block_item_title {
     display: inline-block;
-    margin: 2.5pt;
+    margin: 2.5px;
     height: 16pt;
 }
 
-.sheet-stats-block_item_value{
+.ui-dialog .sheet-stargaze .sheet-stats-block_item_value {
     display: inline-block;
-    margin: 2.5pt;
+    margin: 2.5px;
     width: 16pt;
     height: 16pt;
     text-align: center;
 }
 
-.sheet-stats-block_title-conatiner_body{
+.ui-dialog .sheet-stargaze .sheet-stats-block_title-conatiner_body {
     animation: 1s linear infinite body-background;
-
     background-repeat: repeat;
     background-size: 16px 16px;
     background-image: var(--Pattern1);
-
     border-radius: none;
     outline: solid;
     outline-width: 2px;
     outline-color: var(--body-dark);
 }
 
-.sheet-stats-block_title-conatiner_nerv{
+.ui-dialog .sheet-stargaze .sheet-stats-block_title-conatiner_nerv {
     animation: 3s linear infinite nerv-background;
-
     background-repeat: repeat;
     background-size: 48px 48px;
     background-image: var(--Pattern2);
-
     border-radius: none;
     outline: solid;
     outline-width: 2px;
     outline-color: var(--nerv-dark);
 }
 
-.sheet-stats-block_title-conatiner_mind{
+.ui-dialog .sheet-stargaze .sheet-stats-block_title-conatiner_mind {
     animation: 2.5s linear infinite mind-background;
-
     background-repeat: repeat;
     background-size: 48px 48px;
     background-image: var(--Pattern3);
-
     border-radius: none;
     outline: solid;
     outline-width: 2px;
     outline-color: var(--mind-dark);
 }
 
-.sheet-stats-block_title-conatiner_psyc{
+.ui-dialog .sheet-stargaze .sheet-stats-block_title-conatiner_psyc {
     animation: 8s linear infinite psyc-background;
-
     background-repeat: repeat;
     background-size: 72px 72px;
     background-image: var(--Pattern4);
-
     border-radius: none;
     outline: solid;
     outline-width: 2px;
     outline-color: var(--psyc-dark);
 }
 
-.sheet-stats-block_title-conatiner_body .sheet-stats-block_value{
+.ui-dialog .sheet-stargaze .sheet-stats-block_title-conatiner_body .sheet-stats-block_value {
     border: none;
-
     outline: solid;
     outline-width: 2px;
     outline-color: var(--body-dark);
-
     color: var(--body-light);
     font-weight: bold;
 }
 
-.sheet-stats-block_title-conatiner_nerv .sheet-stats-block_value{
+.ui-dialog .sheet-stargaze .sheet-stats-block_title-conatiner_nerv .sheet-stats-block_value {
     border: none;
-    
     outline: solid;
     outline-width: 2px;
     outline-color: var(--nerv-dark);
-
     color: var(--nerv-light);
     font-weight: bold;
 }
 
-.sheet-stats-block_title-conatiner_mind .sheet-stats-block_value{
+.ui-dialog .sheet-stargaze .sheet-stats-block_title-conatiner_mind .sheet-stats-block_value {
     border: none;
-    
     outline: solid;
     outline-width: 2px;
     outline-color: var(--mind-dark);
-
     color: var(--mind-light);
     font-weight: bold;
 }
 
-.sheet-stats-block_title-conatiner_psyc .sheet-stats-block_value{
+.ui-dialog .sheet-stargaze .sheet-stats-block_title-conatiner_psyc .sheet-stats-block_value {
     border: none;
-
     outline: solid;
     outline-width: 2px;
     outline-color: var(--psyc-dark);
-
     color: var(--psyc-light);
     font-weight: bold;
 }
 
 @keyframes body-background {
-    from {background-position-y: 0px;}
-    to {background-position-y: 16px;}
+    from { background-position-y: 0px; }
+    to { background-position-y: 16px; }
 }
 
 @keyframes nerv-background {
-    from {background-position-y: 0px;}
-    to {background-position-y: 48px;}
+    from { background-position-y: 0px; }
+    to { background-position-y: 48px; }
 }
 
 @keyframes mind-background {
-    from {background-position-y: 0px; background-position-x: 0px;}
-    to {background-position-y: 48px; background-position-x: 96px;}
+    from { background-position-y: 0px; background-position-x: 0px; }
+    to { background-position-y: 48px; background-position-x: 96px; }
 }
 
 @keyframes psyc-background {
-    from {background-position-x: 0px; background-position-y: 0px;}
-    to {background-position-x: -288px; background-position-y: 72px;}
+    from { background-position-x: 0px; background-position-y: 0px; }
+    to { background-position-x: -288px; background-position-y: 72px; }
 }
 
 /* #endregion */
 
 /* #region Profile Page */
 
-.sheet-character-sheet-page_profile{
-    gap: 15px;
+.ui-dialog .sheet-stargaze .sheet-page_profile {
     height: 100%;
     width: calc(100% - 20px);
-
     margin-top: 15px;
     padding: 5px;
+    display: grid;
+    grid-template: 
+        "a a a" 40px
+        "b c c" 40px
+        "b c c" 40px / 1fr 1fr 1fr;
 }
 
 /* #endregion */
 
 /* #region Meds Page */
 
-.sheet-character-sheet-page_meds{
+.ui-dialog .sheet-character-sheet-page_meds {
     gap: 15px;
     max-height: 100%;
     min-height: 300px;
     width: calc(100% - 20px);
-
     margin-top: 15px;
     padding: 5px;
 }
@@ -1152,12 +1185,11 @@
 
 /* #region Hacks Page */
 
-.sheet-character-sheet-page_hacks{
+.ui-dialog .sheet-character-sheet-page_hacks {
     gap: 15px;
     max-height: 100%;
     min-height: 300px;
     width: 100%;
-
     margin: 15px;
     padding: 5px;
 }
@@ -1166,56 +1198,55 @@
 
 /* #region Battle Page */
 
-.sheet-character-sheet-page_battle{
+.ui-dialog .sheet-character-sheet-page_battle {
     gap: 15px;
     max-height: 100%;
     min-height: 300px;
     width: calc(100% - 20px);
-
     margin-top: 15px;
     padding: 5px;
 }
+
 /* #endregion */
 
 /* #region Sheet Tabs */
 
-.sheet-toggle{
+.ui-dialog .sheet-toggle {
     padding: 5px;
 }
 
-.sheet-toggle:hover{
+.ui-dialog .sheet-toggle:hover {
 }
 
-.sheet-toggle:active{
+.ui-dialog .sheet-toggle:active {
 }
 
-.sheet-tabstoggle[value="character"] ~ div .sheet-button0,
-.sheet-tabstoggle[value="profile"] ~ div .sheet-button1,
-.sheet-tabstoggle[value="meds"] ~ div .sheet-button2,
-.sheet-tabstoggle[value="hacks"] ~ div .sheet-button3,
-.sheet-tabstoggle[value="battle"] ~ div .sheet-button4 {
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="character"] ~ div .sheet-button0,
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="profile"] ~ div .sheet-button1,
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="meds"] ~ div .sheet-button2,
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="hacks"] ~ div .sheet-button3,
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="battle"] ~ div .sheet-button4 {
     top: 0px;
     right: 0px;
     box-shadow: 0px 0px 0px #ffffff10;
     border: none;
     border-radius: 0px;
-
     transition: 0.1s;
 }
 
-.sheet-page_main,
-.sheet-page_profile,
-.sheet-page_meds,
-.sheet-page_hacks,
-.sheet-page_battle {
+.ui-dialog .sheet-stargaze .sheet-page_main,
+.ui-dialog .sheet-stargaze .sheet-page_profile,
+.ui-dialog .sheet-stargaze .sheet-page_meds,
+.ui-dialog .sheet-stargaze .sheet-page_hacks,
+.ui-dialog .sheet-stargaze .sheet-page_battle {
     display: none;
 }
 
-.sheet-tabstoggle[value="character"] ~ .sheet-page_main,
-.sheet-tabstoggle[value="profile"] ~ .sheet-page_profile,
-.sheet-tabstoggle[value="meds"] ~ .sheet-page_meds,
-.sheet-tabstoggle[value="hacks"] ~ .sheet-page_hacks,
-.sheet-tabstoggle[value="battle"] ~ .sheet-page_battle {
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="character"] ~ .sheet-page_main,
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="profile"] ~ .sheet-page_profile,
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="meds"] ~ .sheet-page_meds,
+.ui-dialog .sheet-tabstoggle[value="hacks"] ~ .sheet-page_hacks,
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="battle"] ~ .sheet-page_battle {
     display: grid;
 }
 
@@ -1227,30 +1258,28 @@
     min-width: 50px;
     margin: 0px;
     padding: 0px;
-
     font-family: monospace, 'Monaco', system-ui;
     font-size: 10pt;
 }
 
 .sheet-rolltemplate-pcheck .sheet-temp_body {
-    display: grid;
-    grid-template-columns: auto 50px;
-    gap: 5px;
-
     margin: 0px;
     padding: 10px;
-
     border-image-source: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block6.svg");
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
-
     background-image: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Back2.svg");
     background-color: #000000;
     background-repeat: repeat;
     background-size: 32px;
-    animation: 4s linear infinite page-background;
 }
+
+ .sheet-rolltemplate-pcheck .sheet-temp_body {
+    display: grid;
+    grid-template-columns: auto 50px;
+    gap: 5px;
+ }
 
 .sheet-rolltemplate-pcheck .sheet-temp_body_1 {
     grid-column: 1;
@@ -1259,6 +1288,10 @@
 .sheet-rolltemplate-pcheck .sheet-temp_body_2 {
     grid-column: 2;
 }
+
+/*---------------------------------------------------------------------------
+ * Content
+ *---------------------------------------------------------------------------*/
 
 .sheet-rolltemplate-pcheck .sheet-temp_header {
     color: #dbddde;
@@ -1270,25 +1303,20 @@
 
 .sheet-rolltemplate-pcheck .sheet-temp_roll {
     margin: 5px;
-
     height: 40px;
     width: 40px;
-
     line-break: loose;
-
     color: #dbddde;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     border-image-source: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block3.svg");
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
 }
 
-.sheet-rolltemplate-pcheck .sheet-temp_roll .inlinerollresult{
+.sheet-rolltemplate-pcheck .sheet-temp_roll .inlinerollresult {
     background: none;
     border: none;
 }
@@ -1305,8 +1333,79 @@
     color: rgb(0, 153, 200);
 }
 
+/*---------------------------------------------------------------------------
+ * Styling
+ *---------------------------------------------------------------------------*/
 
-/* #endregion Templates */
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-body {
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-nerv {
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-mind {
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-psyc {
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-dark {
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-dark .sheet-temp_roll {
+    text-indent:-999em;
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-dark .sheet-temp_roll:hover {
+    text-indent:0em;
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-fulldark {
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-fulldark .sheet-temp_description,
+    .sheet-rolltemplate-pcheck .sheet-temp_body_back-fulldark .sheet-temp_roll {
+    text-indent:-999em;
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-fulldark:hover .sheet-temp_description,
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-fulldark:hover .sheet-temp_roll {
+    text-indent:0em;
+}
+
+ /*
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-body {
+    background-repeat: repeat;
+    background-size: 16px 16px;
+    background-image: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternBody.svg");
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-nerv {
+    background-repeat: repeat;
+    background-size: 48px 48px;
+    background-image: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternNerv.svg");
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-mind {
+    background-repeat: repeat;
+    background-size: 48px 48px;
+    background-image: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternMind.svg");
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-psyc {
+    background-repeat: repeat;
+    background-size: 72px 72px;
+    background-image: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternPsyc.svg");
+}
+
+.sheet-rolltemplate-pcheck .sheet-temp_body_back-dark {
+    background-repeat: repeat;
+    background-size: 72px 72px;
+    background-image: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternPsyc.svg");
+}
+*/
+
+/* #endregion Template - Property check */
 
 /* #region Template - Weapon check */
 
@@ -1314,7 +1413,6 @@
     min-width: 50px;
     margin: 0px;
     padding: 0px;
-
     font-family: monospace, 'Monaco', system-ui;
     font-size: 10pt;
 }
@@ -1323,15 +1421,12 @@
     display: grid;
     grid-template-columns: auto 50px;
     gap: 5px;
-
     margin: 0px;
     padding: 10px;
-
     border-image-source: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block6.svg");
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
-
     background-image: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Back2.svg");
     background-color: #000000;
     background-repeat: repeat;
@@ -1357,23 +1452,19 @@
 
 .sheet-rolltemplate-wcheck .sheet-temp_roll {
     margin: 5px;
-
     height: 40px;
     width: 40px;
-
     color: #dbddde;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     border-image-source: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block3.svg");
     border-image-slice: 45% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
 }
 
-.sheet-rolltemplate-wcheck .sheet-temp_roll .inlinerollresult{
+.sheet-rolltemplate-wcheck .sheet-temp_roll .inlinerollresult {
     background: none;
     border: none;
 }
@@ -1390,37 +1481,32 @@
     color: rgb(0, 153, 200);
 }
 
-
 /* #endregion Templates */
 
 /* #region Console */
 
-.sheet-console{
+.ui-dialog .sheet-console {
     display: inline-block;
     display: none;
     position: absolute;
     left: 0px;
 }
 
-.sheet-console_container{
+.ui-dialog .sheet-console_container {
     display: inline-flex;
-    -webkit-flex-direction: column; 
-    flex-direction: column; 
-
+    -webkit-flex-direction: column;
+    flex-direction: column;
     outline: none;
     border-radius: 0px;
     border: solid 1px white;
-
     background-color: black;
     color: white;
 }
 
-.sheet-console_container_input{
+.ui-dialog .sheet-console_container_input {
     padding: 15px;
     min-width: 30px;
-
     font-family: monospace;
-
     outline: none;
     border: none;
     background: none;
@@ -1429,7 +1515,7 @@
     color: white;
 }
 
-.sheet-console_container_button{
+.ui-dialog .sheet-console_container_button {
     display: inline-block;
     outline: none;
     border: none;
@@ -1437,34 +1523,32 @@
     border-radius: 0px;
     background-color: black;
     color: white;
-
     font-weight: bold;
-
     text-align: left;
     margin: 5px;
     margin-left: 15px;
     padding: 0px;
 }
 
-.sheet-console_container_button:active{
+.ui-dialog .sheet-console_container_button:active {
     background-color: white;
     color: black;
 }
 
-.sheet-console_container_input::-webkit-scrollbar {
+.ui-dialog .sheet-console_container_input::-webkit-scrollbar {
     width: 4px;
 }
 
-.sheet-console_container_input::-webkit-scrollbar-button {
+.ui-dialog .sheet-console_container_input::-webkit-scrollbar-button {
     display: none;
 }
 
-.sheet-console_container_input::-webkit-scrollbar-track {
+.ui-dialog .sheet-console_container_input::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-.sheet-console_container_input::-webkit-scrollbar-thumb {
-    background: #ffffff90; 
+.ui-dialog .sheet-console_container_input::-webkit-scrollbar-thumb {
+    background: #ffffff90;
 }
 
 /* #endregion */
