@@ -16,7 +16,7 @@
 
         <div class="sheet-content">
             <!-- Metadata -->
-            <input class="sheet-tabstoggle" type="hidden" name="attr_characterSheetTab" value="character" />
+            <input class="sheet-tabstoggle" type="hidden" name="attr_characterSheetTab" value="hacks" />
             <!-- Sheet -->
             <div class="sheet-header">
                 <input class="sheet-header_input sheet-input_small" type="text" name="attr_name" placeholder="Имя">
@@ -32,46 +32,46 @@
                 </div>
             </div>
             <div class="sheet-page_main sheet-block_giant">
-                <div class="sheet-page_main_header sheet-block_big">
-                    <div class="sheet-header-input sheet-header-input_left">
-                        <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_health">
-                        <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_health_max">
-                        <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Здоровье}} {{description=Проверка характеристики}} {{roll1=@{health}}} {{roll2=@{health_max}}}">[ ЗДР ]</button>
+                <div class="sheet-page_main_header sheet-ribbon sheet-block_big">
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_health">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_health_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Здоровье}} {{description=Проверка характеристики}} {{roll1=@{health}}} {{roll2=@{health_max}}}">[ ЗДР ]</button>
                     </div>
-                    <div class="sheet-header-input sheet-header-input_left">
-                        <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_armor">
-                        <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_armor_max">
-                        <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Броня}} {{description=Проверка характеристики}} {{roll1=@{armor}}} {{roll2=@{armor_max}}}">[ БРН ]</button>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_armor">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_armor_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Броня}} {{description=Проверка характеристики}} {{roll1=@{armor}}} {{roll2=@{armor_max}}}">[ БРН ]</button>
                     </div>
-                    <div class="sheet-header-input sheet-header-input_left">
-                        <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_stamina">
-                        <input class="sheet-header-input_input_double sheet-input_big" type="text" name="attr_stamina_max">
-                        <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Выносливость}} {{description=Проверка характеристики}} {{roll1=@{stamina}}} {{roll2=@{stamina_max}}}">[ ВЫН ]</button>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_stamina">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_stamina_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Выносливость}} {{description=Проверка характеристики}} {{roll1=@{stamina}}} {{roll2=@{stamina_max}}}">[ ВЫН ]</button>
                     </div>
-                    <div class="sheet-header-input sheet-header-input_left">
-                        <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_speed">
-                        <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Скорость}} {{description=Боевая проверка}} {{roll1=@{speed}}}">[ СКР ]</button>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_speed">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Скорость}} {{description=Боевая проверка}} {{roll1=@{speed}}}">[ СКР ]</button>
                     </div>
-                    <div class="sheet-header-input sheet-header-input_left">
-                        <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_initiative">
-                        <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Инициатива}} {{description=Боевая проверка}}{{roll1=[[d20 + @{initiative}]]}}">[ ИНИ ]</button>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_initiative">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Инициатива}} {{description=Боевая проверка}}{{roll1=[[d20 + @{initiative}]]}}">[ ИНИ ]</button>
                     </div>
-                    <div class="sheet-header-space"></div>
-                    <div class="sheet-header-input sheet-header-input_left">
-                        <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_accshot">
-                        <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Точная стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{accshot}]]}}">[ ТС ]</button>
+                    <div class="sheet-ribbon_space"></div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_accshot">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Точная стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{accshot}]]}}">[ ТС ]</button>
                     </div>
-                    <div class="sheet-header-input sheet-header-input_right">
-                        <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_quickshot">
-                        <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Быстрая стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{quickshot}]]}}">[ БС ]</button>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_quickshot">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Быстрая стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{quickshot}]]}}">[ БС ]</button>
                     </div>
-                    <div class="sheet-header-input sheet-header-input_right">
-                        <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_melee">
-                        <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Ближний бой}} {{description=Боевая проверка}}{{roll1=[[d20 + @{melee}]]}}">[ ББ ]</button>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_melee">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Ближний бой}} {{description=Боевая проверка}}{{roll1=[[d20 + @{melee}]]}}">[ ББ ]</button>
                     </div>
-                    <div class="sheet-header-input sheet-header-input_right">
-                        <input class="sheet-header-input_input_single sheet-input_big" type="text" name="attr_hack">
-                        <button class="sheet-header-input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Взлом}} {{description=Боевая проверка}}{{roll1=[[d20 + @{hack}]]}}">[ ВЗ ]</button>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_hack">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Взлом}} {{description=Боевая проверка}}{{roll1=[[d20 + @{hack}]]}}">[ ВЗ ]</button>
                     </div>
                 </div>
                 <div class="sheet-page_main_body">
@@ -212,16 +212,22 @@
                         <div class="sheet-repeating-area sheet-repeating-area_property">
                             <fieldset class="repeating_properties">
                                 <!-- Metadata -->
-                                <input class="sheet-repeating" type="hidden" name="attr_editor_edit" value="1" />
+                                <input class="sheet-repeating-area_hide" type="hidden" name="attr_editor-hide" value="0"/>
+                                <input class="sheet-repeating-area_lock" type="hidden" name="attr_editor-lock" value="0"/>
                                 <!-- Edit -->
                                 <div class="sheet-repeating-area_item sheet-repeating-area_item_property sheet-block_alt">
-                                    <input class="sheet-repeating-area_item_header sheet-input_mid" type="text" name="attr_property_name" placeholder="Название свойства">
-                                    <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=@{property_name}}} {{description=@{property_desc}}}"></button>
-                                    <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_property_desc" placeholder="Описание свойства"></textarea>
-                                </div>
-                                <!-- Preview -->
-                                <div class="sheet-repeating-area_preview sheet-block_alt">
-                                    <span class="sheet-input_none" type="text" name="attr_editor_preview" readonly="true">213213 j123 j123j123j123jsdasda sd asd as das das d sd a1 23j123j123j123j123j123j123j123j123j123j1 23j123j123j123j123j123j123j123j sd as das das ds123j 21j3 1l2</span>
+                                    <div class="sheet-repeating-area_item_header">
+                                        <input class="sheet-repeating-area_item_head sheet-input_mid" type="text" name="attr_name" placeholder="Название свойства">
+                                        <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=@{name}}} {{description=@{description}}}"></button>
+                                        <button class="sheet-button sheet-button_small-hide" type="action" name="act_hide"></button>
+                                        <button class="sheet-button sheet-button_small-lock" type="action" name="act_lock"></button>
+                                    </div>
+                                    <div class="sheet-repeating-area_item_body">
+                                        <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_description" placeholder="Описание свойства"></textarea>
+                                    </div>
+                                    <div class="sheet-repeating-area_item_preview">
+                                        <span class="sheet-input_none"  name="attr_editor-preview"></span>
+                                    </div>
                                 </div>
                             </fieldset>
                         </div>
@@ -230,11 +236,12 @@
                         <div class="sheet-repeating-area sheet-repeating-area_action">
                             <fieldset class="repeating_actions">
                                 <!-- Metadata -->
-                                <input class="sheet-repeating" type="hidden" name="attr_editor_edit" value="1" />
+                                <input class="sheet-repeating-area_hide" type="hidden" name="attr_editor-hide" value="0" />
                                 <!-- Edit -->
                                 <div class="sheet-repeating-area_item sheet-repeating-area_item_action sheet-block_alt">
                                     <input class="sheet-repeating-area_item_header sheet-input_mid" type="text" name="attr_spellname1" placeholder="Название статуса">
-                                    <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:default} {{name=Hello}}"></button>
+                                    <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:default} {{name=Hello}}"><img class="sheet-button-icon" src="https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Icon5.svg" width="15" height="15"></button>
+                                    <button class="sheet-button sheet-button_small-hide" type="action" name="act_hide"><img class="sheet-button-icon" src="https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Icon3.svg" width="15" height="15"></button>
                                     <input class="sheet-repeating-area_item_header sheet-input_mid" type="text" name="attr_spellname1" placeholder="Время действия">
                                     <div class="sheet-select_small">
                                         <select name="attr_WoundLevel">
@@ -251,10 +258,6 @@
                                         </select>
                                     </div>
                                     <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_spellname2" placeholder="Описание статуса"></textarea>
-                                </div>
-                                <!-- Preview -->
-                                <div class="sheet-repeating-area_preview sheet-block_alt">
-                                    <span class="sheet-input_none" type="text" name="attr_editor_preview" readonly="true">213213 j123 j123j123j123jsdasda sd asd as das das d sd a1 23j123j123j123j123j123j123j123j123j123j1 23j123j123j123j123j123j123j123j sd as das das ds123j 21j3 1l2</span>
                                 </div>
                             </fieldset>
                         </div>
@@ -298,10 +301,309 @@
                 </div>
             </div>
             <div class="sheet-page_meds sheet-block_giant">
-                залупа
+                <div class="sheet-page_meds_header sheet-ribbon sheet-block_big">
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_matter-A">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_matter-A_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещество A}} {{description=Остаток базового вещества}} {{roll1=@{matter-A}}} {{roll2=@{matter-A_max}}}">[ A ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_matter-B">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_matter-B_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещество B}} {{description=Остаток базового вещества}} {{roll1=@{matter-B}}} {{roll2=@{matter-B_max}}}">[ B ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_matter-C">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_matter-C_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещество C}} {{description=Остаток базового вещества}} {{roll1=@{matter-C}}} {{roll2=@{matter-C_max}}}">[ C ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_matter-D">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_matter-D_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещество D}} {{description=Остаток базового вещества}} {{roll1=@{matter-D}}} {{roll2=@{matter-D_max}}}">[ D ]</button>
+                    </div>
+                    <div class="sheet-ribbon_space"></div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_accshot">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Точная стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{accshot}]]}}">[ ТС ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_quickshot">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Быстрая стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{quickshot}]]}}">[ БС ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_melee">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Ближний бой}} {{description=Боевая проверка}}{{roll1=[[d20 + @{melee}]]}}">[ ББ ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_hack">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Взлом}} {{description=Боевая проверка}}{{roll1=[[d20 + @{hack}]]}}">[ ВЗ ]</button>
+                    </div>
+                </div>
+                <div class="sheet-page_meds_body">
+                    <div>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 1 уровень ]</button>
+                        <div class="sheet-meds_area sheet-block_list">
+                            <div class="sheet-repeating-area sheet-repeating-area_meds1">
+                                <fieldset class="repeating_meds1">
+                                    <!-- Metadata -->
+                                    <input class="sheet-repeating-area_hide" type="hidden" name="attr_editor-hide" value="0"/>
+                                    <input class="sheet-repeating-area_lock" type="hidden" name="attr_editor-lock" value="0"/>
+                                    <!-- Edit -->
+                                    <div class="sheet-repeating-area_item sheet-repeating-area_item_property sheet-block_alt">
+                                        <div class="sheet-repeating-area_item_header">
+                                            <input class="sheet-repeating-area_item_head sheet-input_mid" type="text" name="attr_name" placeholder="Название препарата">
+                                            <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=@{name}}} {{description=@{description}}}"></button>
+                                            <button class="sheet-button sheet-button_small-hide" type="action" name="act_hide"></button>
+                                            <button class="sheet-button sheet-button_small-lock" type="action" name="act_lock"></button>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_body">
+                                            <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_description" placeholder="Описание препарата"></textarea>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_preview">
+                                            <span class="sheet-input_none"  name="attr_editor-preview"></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 2 уровень ]</button>
+                        <div class="sheet-meds_area sheet-block_list">
+                            <div class="sheet-repeating-area sheet-repeating-area_meds2">
+                                <fieldset class="repeating_meds2">
+                                    <!-- Metadata -->
+                                    <input class="sheet-repeating-area_hide" type="hidden" name="attr_editor-hide" value="0"/>
+                                    <input class="sheet-repeating-area_lock" type="hidden" name="attr_editor-lock" value="0"/>
+                                    <!-- Edit -->
+                                    <div class="sheet-repeating-area_item sheet-repeating-area_item_property sheet-block_alt">
+                                        <div class="sheet-repeating-area_item_header">
+                                            <input class="sheet-repeating-area_item_head sheet-input_mid" type="text" name="attr_name" placeholder="Название препарата">
+                                            <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=@{name}}} {{description=@{description}}}"></button>
+                                            <button class="sheet-button sheet-button_small-hide" type="action" name="act_hide"></button>
+                                            <button class="sheet-button sheet-button_small-lock" type="action" name="act_lock"></button>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_body">
+                                            <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_description" placeholder="Описание препарата"></textarea>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_preview">
+                                            <span class="sheet-input_none"  name="attr_editor-preview"></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 3 уровень ]</button>
+                        <div class="sheet-meds_area sheet-block_list">
+                            <div class="sheet-repeating-area sheet-repeating-area_meds3">
+                                <fieldset class="repeating_meds3">
+                                    <!-- Metadata -->
+                                    <input class="sheet-repeating-area_hide" type="hidden" name="attr_editor-hide" value="0"/>
+                                    <input class="sheet-repeating-area_lock" type="hidden" name="attr_editor-lock" value="0"/>
+                                    <!-- Edit -->
+                                    <div class="sheet-repeating-area_item sheet-repeating-area_item_property sheet-block_alt">
+                                        <div class="sheet-repeating-area_item_header">
+                                            <input class="sheet-repeating-area_item_head sheet-input_mid" type="text" name="attr_name" placeholder="Название препарата">
+                                            <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=@{name}}} {{description=@{description}}}"></button>
+                                            <button class="sheet-button sheet-button_small-hide" type="action" name="act_hide"></button>
+                                            <button class="sheet-button sheet-button_small-lock" type="action" name="act_lock"></button>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_body">
+                                            <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_description" placeholder="Описание препарата"></textarea>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_preview">
+                                            <span class="sheet-input_none" name="attr_editor-preview"></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 4 уровень ]</button>
+                        <div class="sheet-meds_area sheet-block_list">
+                            <div class="sheet-repeating-area sheet-repeating-area_meds4">
+                                <fieldset class="repeating_meds4">
+                                    <!-- Metadata -->
+                                    <input class="sheet-repeating-area_hide" type="hidden" name="attr_editor-hide" value="0"/>
+                                    <input class="sheet-repeating-area_lock" type="hidden" name="attr_editor-lock" value="0"/>
+                                    <!-- Edit -->
+                                    <div class="sheet-repeating-area_item sheet-repeating-area_item_property sheet-block_alt">
+                                        <div class="sheet-repeating-area_item_header">
+                                            <input class="sheet-repeating-area_item_head sheet-input_mid" type="text" name="attr_name" placeholder="Название препарата">
+                                            <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=@{name}}} {{description=@{description}}}"></button>
+                                            <button class="sheet-button sheet-button_small-hide" type="action" name="act_hide"></button>
+                                            <button class="sheet-button sheet-button_small-lock" type="action" name="act_lock"></button>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_body">
+                                            <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_description" placeholder="Описание препарата"></textarea>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_preview">
+                                            <span class="sheet-input_none" name="attr_editor-preview"></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="sheet-page_hacks sheet-block_giant">
-                Пенис
+                <div class="sheet-page_hacks_header sheet-ribbon sheet-block_big">
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_health">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_health_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Здоровье}} {{description=Проверка характеристики}} {{roll1=@{health}}} {{roll2=@{health_max}}}">[ ЗДР ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_armor">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_armor_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Броня}} {{description=Проверка характеристики}} {{roll1=@{armor}}} {{roll2=@{armor_max}}}">[ БРН ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_stamina">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_stamina_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Выносливость}} {{description=Проверка характеристики}} {{roll1=@{stamina}}} {{roll2=@{stamina_max}}}">[ ВЫН ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_speed">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Скорость}} {{description=Боевая проверка}} {{roll1=@{speed}}}">[ СКР ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_initiative">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Инициатива}} {{description=Боевая проверка}}{{roll1=[[d20 + @{initiative}]]}}">[ ИНИ ]</button>
+                    </div>
+                    <div class="sheet-ribbon_space"></div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_accshot">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Точная стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{accshot}]]}}">[ ТС ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_quickshot">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Быстрая стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{quickshot}]]}}">[ БС ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_melee">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Ближний бой}} {{description=Боевая проверка}}{{roll1=[[d20 + @{melee}]]}}">[ ББ ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_hack">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Взлом}} {{description=Боевая проверка}}{{roll1=[[d20 + @{hack}]]}}">[ ВЗ ]</button>
+                    </div>
+                </div>
+                <div class="sheet-page_hacks_body">
+                    <div>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 1 уровень ]</button>
+                        <div class="sheet-hacks_area sheet-block_list">
+                            <div class="sheet-repeating-area sheet-repeating-area_hacks1">
+                                <fieldset class="repeating_hacks1">
+                                    <!-- Metadata -->
+                                    <input class="sheet-repeating-area_hide" type="hidden" name="attr_editor-hide" value="0"/>
+                                    <input class="sheet-repeating-area_lock" type="hidden" name="attr_editor-lock" value="0"/>
+                                    <!-- Edit -->
+                                    <div class="sheet-repeating-area_item sheet-repeating-area_item_property sheet-block_alt">
+                                        <div class="sheet-repeating-area_item_header">
+                                            <input class="sheet-repeating-area_item_head sheet-input_mid" type="text" name="attr_name" placeholder="Название скрипта">
+                                            <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=@{name}}} {{description=@{description}}}"></button>
+                                            <button class="sheet-button sheet-button_small-hide" type="action" name="act_hide"></button>
+                                            <button class="sheet-button sheet-button_small-lock" type="action" name="act_lock"></button>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_body">
+                                            <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_description" placeholder="Описание скрипта"></textarea>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_preview">
+                                            <span class="sheet-input_none"  name="attr_editor-preview"></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 2 уровень ]</button>
+                        <div class="sheet-hacks_area sheet-block_list">
+                            <div class="sheet-repeating-area sheet-repeating-area_hacks2">
+                                <fieldset class="repeating_hacks2">
+                                    <!-- Metadata -->
+                                    <input class="sheet-repeating-area_hide" type="hidden" name="attr_editor-hide" value="0"/>
+                                    <input class="sheet-repeating-area_lock" type="hidden" name="attr_editor-lock" value="0"/>
+                                    <!-- Edit -->
+                                    <div class="sheet-repeating-area_item sheet-repeating-area_item_property sheet-block_alt">
+                                        <div class="sheet-repeating-area_item_header">
+                                            <input class="sheet-repeating-area_item_head sheet-input_mid" type="text" name="attr_name" placeholder="Название скрипта">
+                                            <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=@{name}}} {{description=@{description}}}"></button>
+                                            <button class="sheet-button sheet-button_small-hide" type="action" name="act_hide"></button>
+                                            <button class="sheet-button sheet-button_small-lock" type="action" name="act_lock"></button>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_body">
+                                            <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_description" placeholder="Описание скрипта"></textarea>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_preview">
+                                            <span class="sheet-input_none"  name="attr_editor-preview"></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 3 уровень ]</button>
+                        <div class="sheet-hacks_area sheet-block_list">
+                            <div class="sheet-repeating-area sheet-repeating-area_hacks3">
+                                <fieldset class="repeating_hacks3">
+                                    <!-- Metadata -->
+                                    <input class="sheet-repeating-area_hide" type="hidden" name="attr_editor-hide" value="0"/>
+                                    <input class="sheet-repeating-area_lock" type="hidden" name="attr_editor-lock" value="0"/>
+                                    <!-- Edit -->
+                                    <div class="sheet-repeating-area_item sheet-repeating-area_item_property sheet-block_alt">
+                                        <div class="sheet-repeating-area_item_header">
+                                            <input class="sheet-repeating-area_item_head sheet-input_mid" type="text" name="attr_name" placeholder="Название скрипта">
+                                            <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=@{name}}} {{description=@{description}}}"></button>
+                                            <button class="sheet-button sheet-button_small-hide" type="action" name="act_hide"></button>
+                                            <button class="sheet-button sheet-button_small-lock" type="action" name="act_lock"></button>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_body">
+                                            <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_description" placeholder="Описание скрипта"></textarea>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_preview">
+                                            <span class="sheet-input_none"  name="attr_editor-preview"></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 4 уровень ]</button>
+                        <div class="sheet-hacks_area sheet-block_list">
+                            <div class="sheet-repeating-area sheet-repeating-area_hacks4">
+                                <fieldset class="repeating_hacks4">
+                                    <!-- Metadata -->
+                                    <input class="sheet-repeating-area_hide" type="hidden" name="attr_editor-hide" value="0"/>
+                                    <input class="sheet-repeating-area_lock" type="hidden" name="attr_editor-lock" value="0"/>
+                                    <!-- Edit -->
+                                    <div class="sheet-repeating-area_item sheet-repeating-area_item_property sheet-block_alt">
+                                        <div class="sheet-repeating-area_item_header">
+                                            <input class="sheet-repeating-area_item_head sheet-input_mid" type="text" name="attr_name" placeholder="Название скрипта">
+                                            <button class="sheet-button sheet-button_small-roll" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=@{name}}} {{description=@{description}}}"></button>
+                                            <button class="sheet-button sheet-button_small-hide" type="action" name="act_hide"></button>
+                                            <button class="sheet-button sheet-button_small-lock" type="action" name="act_lock"></button>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_body">
+                                            <textarea class="sheet-repeating-area_item_text-area sheet-text-area" type="text" name="attr_description" placeholder="Описание скрипта"></textarea>
+                                        </div>
+                                        <div class="sheet-repeating-area_item_preview">
+                                            <span class="sheet-input_none"  name="attr_editor-preview"></span>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="sheet-page_battle sheet-block_giant">
                 Хер
@@ -372,14 +674,63 @@
 
     <script type="text/worker">
         // Character Sheet Tabs
-        const buttonlist = ["character", "profile", "meds", "hacks", "battle"];
-        buttonlist.forEach(button => {
-            on(`clicked:${button}`, function() {
+        const togglelist = ["character", "profile", "meds", "hacks", "battle"];
+        togglelist.forEach(button => {
+            on(`clicked:${button}`, () => {
                 setAttrs({
                     characterSheetTab: button
                 });
             });
         });
+
+        // Hides
+
+        const sections = ["properties", "actions", "hacks1", "hacks2", "hacks3", "hacks4", "meds1", "meds2", "meds3", "meds4"];
+        sections.forEach(section => {
+            on(`clicked:repeating_${section}:hide`, (eventInfo) => {
+                const source = eventInfo.sourceAttribute.replace('_hide', '')
+
+                getAttrs([`${source}_editor-hide`], (v) => {
+                    setAttrs({
+                        [`${source}_editor-hide`]: (v[`${source}_editor-hide`] === "1") ? "0" : "1"
+                    });
+                });
+            });
+
+            on(`clicked:repeating_${section}:lock`, (eventInfo) => {
+                const source = eventInfo.sourceAttribute.replace('_lock', '')
+
+                getAttrs([`${source}_editor-lock`], (v) => {
+                    setAttrs({
+                        [`${source}_editor-lock`]: (v[`${source}_editor-lock`] === "1") ? "0" : "1"
+                    });
+
+                    if(v[`${source}_editor-lock`] === "1"){
+                        setAttrs({
+                            [`${source}_editor-hide`]: "0"
+                        });
+                    }
+                });
+            });
+        });
+
+        // Editor Preview update
+
+        const sectionsSimplePreview = ["properties", "hacks1", "hacks2", "hacks3", "hacks4", "meds1", "meds2", "meds3", "meds4"];
+        sectionsSimplePreview.forEach(section => {
+            on(`change:repeating_${section}`, (eventInfo) => {
+                getAttrs([`repeating_${section}_description`], (v) => {
+                    if(eventInfo.sourceAttribute.includes('editor-')){
+                        return;
+                    }
+                    setAttrs({
+                        [`repeating_${section}_editor-preview`]: v[`repeating_${section}_description`]
+                    });
+                });
+            });
+        });
+
+        console.log("Stargaze character sheet activation complete");
     </script>
 
 </body>

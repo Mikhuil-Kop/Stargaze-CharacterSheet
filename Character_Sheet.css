@@ -47,6 +47,7 @@ html, body,
     font-family: monospace, 'Monaco', system-ui;
     font-size: 10pt;
     color: #dbddde;
+    content: var(--Icon5);
 }
 
 .ui-dialog .charsheet button[type=roll]:before {
@@ -112,6 +113,13 @@ html, body,
     --Pattern2: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternNerv.svg");
     --Pattern3: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternMind.svg");
     --Pattern4: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/PatternPsyc.svg");
+    --Icon1: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Icon1.svg");
+    --Icon2: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Icon2.svg");
+    --Icon3: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Icon3.svg");
+    --Icon4: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Icon4.svg");
+    --Icon5: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Icon5.svg");
+    --IconLock: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/IconLock.svg");
+    --IconUnlock: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/IconUnlock.svg");
 }
 
 /* #endregion */
@@ -181,7 +189,7 @@ html, body,
 .ui-dialog .sheet-stargaze .sheet-block_alt {
     margin: 5px;
     border-image-source: var(--Block2);
-    border-image-slice: 45% fill;
+    border-image-slice: 36% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
 }
@@ -267,6 +275,7 @@ html, body,
 .ui-dialog .sheet-stargaze .sheet-input_mid {
     margin: 5px;
     padding: 5px;
+    padding-left: 10px;
     color: white;
     outline: none;
     background: none;
@@ -323,6 +332,8 @@ html, body,
 .ui-dialog .sheet-stargaze .sheet-input_none::selection,
 .ui-dialog .sheet-stargaze .sheet-input_none:focus,
 .ui-dialog .sheet-stargaze .sheet-input_none {
+    display: block;
+    white-space: pre-line;
     user-select: none;
     margin: 2.5px;
     padding: 5px;
@@ -485,6 +496,7 @@ html, body,
     font-family: monospace, 'Monaco', system-ui;
     font-size: 10pt;
     color: #dbddde;
+    user-select: none;
     transition: 0.1s;
 }
 
@@ -512,14 +524,6 @@ html, body,
     transition: 0.1s;
 }
 
-.ui-dialog .sheet-stargaze .sheet-button_small-roll[type=roll],
-.ui-dialog .sheet-stargaze .sheet-button_small-roll {
-    margin: 2.5px;
-    padding: 0px;
-    width: 30px;
-    height: 30px;
-}
-
 .ui-dialog .sheet-stargaze .sheet-button_text {
     all: initial;
     background: none;
@@ -539,6 +543,18 @@ html, body,
 .ui-dialog .sheet-stargaze .sheet-button_text:active {
     text-decoration: underline dotted white;
     transition: 0.5s;
+}
+
+/*---------------------------------------------------------------------------
+ * Buttons
+ *---------------------------------------------------------------------------*/
+
+.ui-dialog .sheet-stargaze .sheet-button-icon{
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
 }
 
 /* #endregion */
@@ -662,12 +678,104 @@ html, body,
 }
 
 .ui-dialog .sheet-stargaze .sheet-repeating-area_item {
+    display: grid;
     margin: 5px;
     padding: 5px;
     width: calc(100% - 10px);
+    grid-template:
+        'a' 35px
+        'b' 1fr / 1fr;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
+/*---------------------------------------------------------------------------
+ * Structure
+ *---------------------------------------------------------------------------*/
+
 .ui-dialog .sheet-stargaze .sheet-repeating-area_item_header {
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+    padding-right: 5px;
+    grid-template: 'a b c d' 1fr / 1fr 30px 30px 30px;
+    column-gap: 5px;
+}
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_body {
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+}
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_preview {
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+    font-size: 8pt;
+}
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_preview span {
+    font-size: 8pt;
+}
+
+.ui-dialog .sheet-stargaze .sheet-button_small-roll[type=roll],
+.ui-dialog .sheet-stargaze .sheet-button_small-roll,
+.ui-dialog .sheet-stargaze .sheet-button_small-lock,
+.ui-dialog .sheet-stargaze .sheet-button_small-hide {
+    margin: 2.5px;
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+}
+
+.ui-dialog .sheet-stargaze .sheet-button_small-roll[type=roll]::after,
+.ui-dialog .sheet-stargaze .sheet-button_small-roll::after,
+.ui-dialog .sheet-stargaze .sheet-button_small-lock::after,
+.ui-dialog .sheet-stargaze .sheet-button_small-hide::after {
+    display: block;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    margin: 5px;
+    
+    content: var(--Icon5);
+}
+
+.ui-dialog .sheet-stargaze .sheet-button_small-roll[type=roll]::after,
+.ui-dialog .sheet-stargaze .sheet-button_small-roll::after{
+    content: var(--Icon5);
+}
+
+.ui-dialog .sheet-stargaze .sheet-button_small-hide::after {
+    content: var(--Icon1);
+}
+
+.ui-dialog .sheet-stargaze .sheet-button_small-lock::after {
+    content: var(--IconUnlock);
+}
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_hide[value="1"] ~ .sheet-repeating-area_item .sheet-button_small-hide::after{
+    content: var(--Icon3);
+}
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_lock[value="1"] ~ .sheet-repeating-area_item .sheet-button_small-lock::after{
+    content: var(--IconLock);
+}
+
+.ui-dialog .sheet-stargaze :where(.sheet-repeating-area_lock[value="1"], .sheet-repeating-area_hide[value="1"]) ~ .sheet-repeating-area_item .sheet-repeating-area_item_body{
+    display: none;
+}
+
+.ui-dialog .sheet-stargaze  :where(.sheet-repeating-area_lock[value="0"], .sheet-repeating-area_hide[value="1"]) ~ .sheet-repeating-area_item .sheet-repeating-area_item_preview{
+    display: none;
+}
+
+/*---------------------------------------------------------------------------
+ * Items
+ *---------------------------------------------------------------------------*/
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_head {
     margin: 2.5px;
     width: calc(100% - 15px);
 }
@@ -679,25 +787,21 @@ html, body,
 
 .ui-dialog .sheet-stargaze .sheet-repeating-area_item_text-area {
     margin: 2.5px;
-    width: calc(100% - 20px);
+    width: calc(100% - 22.5px);
     height: 47px;
 }
 
-.ui-dialog .sheet-stargaze .sheet-repeating-area_preview {
-    display: block;
-    margin: 5px;
-    padding: 0px;
-    width: calc(100%);
-    min-height: 200px;
+/*---------------------------------------------------------------------------
+ * Specific
+ *---------------------------------------------------------------------------*/
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_property {
 }
 
-.ui-dialog .sheet-stargaze .sheet-repeating-area_preview span {
-    display: block;
-    margin: 2.5px;
-    padding: 5px;
-    height: calc(100% - 10px);
-    width: calc(100% - 15px);
-    font-size: 8pt;
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_property {
+}
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(1) {
 }
 
 .ui-dialog .sheet-stargaze .sheet-repeating-area_action {
@@ -705,7 +809,7 @@ html, body,
 
 .ui-dialog .sheet-stargaze .sheet-repeating-area_item_action {
     display: grid;
-    grid-template-columns: 1fr 35px;
+    grid-template-columns: 1fr 35px 35px;
     grid-template-rows: 35px 35px 30px 1fr;
 }
 
@@ -720,42 +824,23 @@ html, body,
 }
 
 .ui-dialog .sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(3) {
-    grid-row: 2;
-    grid-column: 1 / 3;
+    grid-row: 1;
+    grid-column: 3;
 }
 
 .ui-dialog .sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(4) {
-    grid-row: 3;
-    grid-column: 1 / 3;
+    grid-row: 2;
+    grid-column: 1 / 4;
 }
 
 .ui-dialog .sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(5) {
+    grid-row: 3;
+    grid-column: 1 / 4;
+}
+
+.ui-dialog .sheet-stargaze .sheet-repeating-area_item_action > *:nth-child(6) {
     grid-row: 4;
-    grid-column: 1 / 3;
-}
-
-.ui-dialog .sheet-stargaze .sheet-repeating-area_property {
-}
-
-.ui-dialog .sheet-stargaze .sheet-repeating-area_item_property {
-    display: grid;
-    grid-template-columns: 1fr 35px;
-    grid-template-rows: 35px 1fr;
-}
-
-.ui-dialog .sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(1) {
-    grid-row: 1;
-    grid-column: 1;
-}
-
-.ui-dialog .sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(2) {
-    grid-row: 1;
-    grid-column: 2;
-}
-
-.ui-dialog .sheet-stargaze .sheet-repeating-area_item_property > *:nth-child(3) {
-    grid-row: 2;
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
 }
 
 /* #endregion */
@@ -860,23 +945,50 @@ html, body,
 
 /* #region Header */
 
-.ui-dialog .sheet-header {
+.ui-dialog .sheet-stargaze .sheet-ribbon {
     display: flex;
     align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 5px;
 }
 
-.ui-dialog .sheet-header_input {
-    flex-grow: 1;
-    min-width: 100px;
-}
-
-.ui-dialog .sheet-header_space {
+.ui-dialog .sheet-stargaze .sheet-ribbon_space {
     flex-grow: 3;
 }
 
-.ui-dialog .sheet-header_toggles {
+.ui-dialog .sheet-stargaze .sheet-ribbon_input {
+    display: grid;
+    height: 100px;
+    width: 70px;
+
+    grid-template:
+        'a' 1fr
+        'b' 1fr
+        'c' 1fr;
+
     flex-grow: 0;
-    margin-top: 10px;
+}
+
+.ui-dialog .sheet-stargaze .sheet-ribbon_input_double{
+    width: calc(100% - 20px);
+    grid-row: auto;
+    text-align: center;
+}
+
+.ui-dialog .sheet-stargaze .sheet-ribbon_input_single{
+    width: calc(100% - 20px);
+    grid-row: 1 / 3;
+    text-align: center;
+}
+
+.ui-dialog .sheet-stargaze .sheet-ribbon_input_caption{
+    width: calc(100% - 5px);
+    grid-row: 3;
+
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 /* #endregion */
@@ -892,55 +1004,8 @@ html, body,
 }
 
 .ui-dialog .sheet-stargaze .sheet-page_main_header {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-self: flex-start;
-    padding: 5px;
     width: calc(100% - 20px);
     height: calc(100% - 10px);
-}
-
-.ui-dialog .sheet-stargaze .sheet-header-space {
-    flex-grow: 1;
-}
-
-.ui-dialog .sheet-stargaze .sheet-header-input {
-    flex-grow: 0;
-    display: inline-block;
-    vertical-align: top;
-    align-self: right;
-    margin: 5px;
-    width: 60px;
-    height: 90px;
-}
-
-.ui-dialog .sheet-stargaze input.sheet-header-input_input_single,
-.ui-dialog .sheet-stargaze .sheet-header-input_input_single {
-    text-align: center;
-    height: initial;
-    height: 50px;
-    width: 50px;
-    margin: 0px;
-    margin-bottom: 5px;
-}
-
-.ui-dialog .sheet-stargaze .sheet-header-input_input_double {
-    text-align: center;
-    height: initial;
-    height: 15px;
-    width: 50px;
-    margin: 0px;
-    margin-bottom: 5px;
-}
-
-.ui-dialog .sheet-stargaze .sheet-header-input_caption {
-    text-align: center;
-    width: 65px;
-    height: 20px;
-    margin: 0px;
-    padding-left: -5px;
-    padding-right: -5px;
-    font-family: monospace, 'Monaco', system-ui;
 }
 
 .ui-dialog .sheet-stargaze .sheet-page_main_body {
@@ -1172,33 +1237,83 @@ html, body,
 
 /* #region Meds Page */
 
-.ui-dialog .sheet-character-sheet-page_meds {
-    gap: 15px;
+.ui-dialog .sheet-stargaze .sheet-page_meds {
     max-height: 100%;
-    min-height: 300px;
+    min-height: 700px;
     width: calc(100% - 20px);
-    margin-top: 15px;
     padding: 5px;
+
+    display: grid;
+    gap: 15px;
+    grid-template:
+        "a" 100px,
+        "b" 1fr
+}
+
+.ui-dialog .sheet-stargaze .sheet-page_meds_header {
+}
+
+.ui-dialog .sheet-stargaze .sheet-page_meds_body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    display: grid;
+    gap: 15px;
+    grid-template:
+        "a b" 1fr
+        "c d" 1fr / 1fr 1fr;
+}
+
+.ui-dialog .sheet-stargaze .sheet-meds_area {
+    display: block;
+    height: 450px;
 }
 
 /* #endregion */
 
 /* #region Hacks Page */
 
-.ui-dialog .sheet-character-sheet-page_hacks {
-    gap: 15px;
+.ui-dialog .sheet-stargaze .sheet-page_hacks {
     max-height: 100%;
-    min-height: 300px;
-    width: 100%;
-    margin: 15px;
+    min-height: 700px;
+    width: calc(100% - 20px);
     padding: 5px;
+
+    display: grid;
+    gap: 15px;
+    grid-template:
+        "a" 100px,
+        "b" 1fr
+}
+
+.ui-dialog .sheet-stargaze .sheet-page_hacks_header {
+}
+
+.ui-dialog .sheet-stargaze .sheet-page_hacks_body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    display: grid;
+    gap: 15px;
+    grid-template:
+        "a b" 1fr
+        "c d" 1fr / 1fr 1fr;
+}
+
+.ui-dialog .sheet-stargaze .sheet-hacks_area {
+    display: block;
+    height: 450px;
 }
 
 /* #endregion */
 
 /* #region Battle Page */
 
-.ui-dialog .sheet-character-sheet-page_battle {
+.ui-dialog .sheet-page_battle {
     gap: 15px;
     max-height: 100%;
     min-height: 300px;
@@ -1245,7 +1360,7 @@ html, body,
 .ui-dialog .sheet-stargaze .sheet-tabstoggle[value="character"] ~ .sheet-page_main,
 .ui-dialog .sheet-stargaze .sheet-tabstoggle[value="profile"] ~ .sheet-page_profile,
 .ui-dialog .sheet-stargaze .sheet-tabstoggle[value="meds"] ~ .sheet-page_meds,
-.ui-dialog .sheet-tabstoggle[value="hacks"] ~ .sheet-page_hacks,
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="hacks"] ~ .sheet-page_hacks,
 .ui-dialog .sheet-stargaze .sheet-tabstoggle[value="battle"] ~ .sheet-page_battle {
     display: grid;
 }
