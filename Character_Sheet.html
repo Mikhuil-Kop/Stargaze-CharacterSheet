@@ -16,7 +16,7 @@
 
         <div class="sheet-content">
             <!-- Metadata -->
-            <input class="sheet-tabstoggle" type="hidden" name="attr_characterSheetTab" value="hacks" />
+            <input class="sheet-tabstoggle" type="hidden" name="attr_characterSheetTab" value="profile" />
             <!-- Sheet -->
             <div class="sheet-header">
                 <input class="sheet-header_input sheet-input_small" type="text" name="attr_name" placeholder="Имя">
@@ -29,6 +29,7 @@
                     <button class="sheet-button sheet-toggle sheet-button2" type="action" name="act_meds">Лекарства</button>
                     <button class="sheet-button sheet-toggle sheet-button3" type="action" name="act_hacks">Скрипты</button>
                     <button class="sheet-button sheet-toggle sheet-button4" type="action" name="act_battle">Бой</button>
+                    <button class="sheet-button sheet-toggle sheet-button5" type="action" name="act_settings">Настройки</button>
                 </div>
             </div>
             <div class="sheet-page_main sheet-block_giant">
@@ -608,6 +609,52 @@
             <div class="sheet-page_battle sheet-block_giant">
                 Хер
             </div>
+            <div class="sheet-page_settings sheet-block_giant">
+                <div class="sheet-page_settings_header sheet-ribbon sheet-block_big">
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_health">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_health_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Здоровье}} {{description=Проверка характеристики}} {{roll1=@{health}}} {{roll2=@{health_max}}}">[ ЗДР ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_armor">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_armor_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Броня}} {{description=Проверка характеристики}} {{roll1=@{armor}}} {{roll2=@{armor_max}}}">[ БРН ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_stamina">
+                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_stamina_max">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Выносливость}} {{description=Проверка характеристики}} {{roll1=@{stamina}}} {{roll2=@{stamina_max}}}">[ ВЫН ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_speed">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Скорость}} {{description=Боевая проверка}} {{roll1=@{speed}}}">[ СКР ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_initiative">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Инициатива}} {{description=Боевая проверка}}{{roll1=[[d20 + @{initiative}]]}}">[ ИНИ ]</button>
+                    </div>
+                    <div class="sheet-ribbon_space"></div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_accshot">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Точная стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{accshot}]]}}">[ ТС ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_quickshot">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Быстрая стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{quickshot}]]}}">[ БС ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_melee">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Ближний бой}} {{description=Боевая проверка}}{{roll1=[[d20 + @{melee}]]}}">[ ББ ]</button>
+                    </div>
+                    <div class="sheet-ribbon_input">
+                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_hack">
+                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Взлом}} {{description=Боевая проверка}}{{roll1=[[d20 + @{hack}]]}}">[ ВЗ ]</button>
+                    </div>
+                </div>
+                <div class="sheet-page_settings_body">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -674,7 +721,7 @@
 
     <script type="text/worker">
         // Character Sheet Tabs
-        const togglelist = ["character", "profile", "meds", "hacks", "battle"];
+        const togglelist = ["character", "profile", "meds", "hacks", "battle", "settings"];
         togglelist.forEach(button => {
             on(`clicked:${button}`, () => {
                 setAttrs({

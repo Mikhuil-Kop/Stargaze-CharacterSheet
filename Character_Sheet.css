@@ -1324,6 +1324,19 @@ html, body,
 
 /* #endregion */
 
+/* #region Settings Page */
+
+.ui-dialog .sheet-page_settings {
+    gap: 15px;
+    max-height: 100%;
+    min-height: 300px;
+    width: calc(100% - 20px);
+    margin-top: 15px;
+    padding: 5px;
+}
+
+/* #endregion */
+
 /* #region Sheet Tabs */
 
 .ui-dialog .sheet-toggle {
@@ -1340,7 +1353,8 @@ html, body,
 .ui-dialog .sheet-stargaze .sheet-tabstoggle[value="profile"] ~ div .sheet-button1,
 .ui-dialog .sheet-stargaze .sheet-tabstoggle[value="meds"] ~ div .sheet-button2,
 .ui-dialog .sheet-stargaze .sheet-tabstoggle[value="hacks"] ~ div .sheet-button3,
-.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="battle"] ~ div .sheet-button4 {
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="battle"] ~ div .sheet-button4,
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="settings"] ~ div .sheet-button5 {
     top: 0px;
     right: 0px;
     box-shadow: 0px 0px 0px #ffffff10;
@@ -1353,7 +1367,8 @@ html, body,
 .ui-dialog .sheet-stargaze .sheet-page_profile,
 .ui-dialog .sheet-stargaze .sheet-page_meds,
 .ui-dialog .sheet-stargaze .sheet-page_hacks,
-.ui-dialog .sheet-stargaze .sheet-page_battle {
+.ui-dialog .sheet-stargaze .sheet-page_battle,
+.ui-dialog .sheet-stargaze .sheet-page_settings {
     display: none;
 }
 
@@ -1361,7 +1376,8 @@ html, body,
 .ui-dialog .sheet-stargaze .sheet-tabstoggle[value="profile"] ~ .sheet-page_profile,
 .ui-dialog .sheet-stargaze .sheet-tabstoggle[value="meds"] ~ .sheet-page_meds,
 .ui-dialog .sheet-stargaze .sheet-tabstoggle[value="hacks"] ~ .sheet-page_hacks,
-.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="battle"] ~ .sheet-page_battle {
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="battle"] ~ .sheet-page_battle,
+.ui-dialog .sheet-stargaze .sheet-tabstoggle[value="settings"] ~ .sheet-page_settings {
     display: grid;
 }
 
