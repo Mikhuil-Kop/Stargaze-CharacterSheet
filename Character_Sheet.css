@@ -149,6 +149,16 @@ html, body,
 /* #region Common */
 
 /*---------------------------------------------------------------------------
+ * Labels
+ *---------------------------------------------------------------------------*/
+
+ .ui-dialog .sheet-stargaze .sheet-label {
+    font-size: 10pt;
+    font-family: monospace, 'Monaco', system-ui;
+    color: #b3b3b3;
+}
+
+/*---------------------------------------------------------------------------
  * Groups
  *---------------------------------------------------------------------------*/
 
@@ -279,7 +289,7 @@ html, body,
     color: white;
     outline: none;
     background: none;
-    border-image-source: var(--Bar3);
+    border-image-source: var(--Bar2);
     border-image-slice: 33% fill;
     border-image-width: 32px;
     border-image-outset: 8px;
@@ -425,7 +435,6 @@ html, body,
     font-size: 10pt;
     font-weight: 600;
     line-height: 100%;
-    color: #5f5f5f;
 }
 
 .ui-dialog .sheet-stargaze p {
@@ -1228,10 +1237,45 @@ html, body,
     padding: 5px;
     display: grid;
     grid-template: 
-        "a a a" 40px
-        "b c c" 40px
-        "b c c" 40px / 1fr 1fr 1fr;
+        "a a f" auto
+        "b c f" 1fr
+        "d c f" 1fr / 1fr 1fr 1fr;
 }
+
+.ui-dialog .sheet-stargaze .sheet-page_profile > *:nth-child(1){ grid-area: a; }
+.ui-dialog .sheet-stargaze .sheet-page_profile > *:nth-child(2){ grid-area: b; }
+.ui-dialog .sheet-stargaze .sheet-page_profile > *:nth-child(3){ grid-area: c; }
+.ui-dialog .sheet-stargaze .sheet-page_profile > *:nth-child(4){ grid-area: d; }
+.ui-dialog .sheet-stargaze .sheet-page_profile > *:nth-child(5){ grid-area: f; }
+
+.ui-dialog .sheet-stargaze .sheet-page_profile_properties {
+    display: grid;
+    grid-template-columns: auto 2fr auto 1fr auto 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-column-gap: 5px;
+    padding: 10px;
+    align-items: center;
+}
+
+.ui-dialog .sheet-stargaze .sheet-page_profile_properties > p{
+    text-align: right;
+}
+
+.ui-dialog .sheet-stargaze .sheet-page_profile_history {
+}
+
+.ui-dialog .sheet-stargaze .sheet-page_profile_special {
+}
+
+.ui-dialog .sheet-stargaze .sheet-page_profile_actual {
+}
+
+.ui-dialog .sheet-stargaze .sheet-page_profile_properties {
+}
+
+.ui-dialog .sheet-stargaze .sheet-page_profile_logs {
+}
+
 
 /* #endregion */
 
@@ -1314,12 +1358,18 @@ html, body,
 /* #region Battle Page */
 
 .ui-dialog .sheet-page_battle {
-    gap: 15px;
-    max-height: 100%;
-    min-height: 300px;
+    height: 100%;
     width: calc(100% - 20px);
     margin-top: 15px;
     padding: 5px;
+
+    display: grid;
+    grid-template: "a" 1fr / 1fr;
+}
+
+.ui-dialog .sheet-page_battle_body {
+    display: grid;
+    grid-template: "a" 1fr / 1fr;
 }
 
 /* #endregion */
@@ -1327,12 +1377,39 @@ html, body,
 /* #region Settings Page */
 
 .ui-dialog .sheet-page_settings {
-    gap: 15px;
-    max-height: 100%;
-    min-height: 300px;
+    height: 100%;
     width: calc(100% - 20px);
     margin-top: 15px;
     padding: 5px;
+
+    display: grid;
+    grid-template: "a" 1fr / 1fr;
+}
+
+.ui-dialog .sheet-page_settings_body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.ui-dialog .sheet-page_settings_setting{
+    display: grid;
+    align-items: center;
+    width: 360px;
+    grid-template-columns: 100px 1fr;
+}
+
+.ui-dialog .sheet-page_settings_setting > p{
+    text-align: left;
+}
+
+.ui-dialog .sheet-page_settings_setting > button{
+    width: 100%;
 }
 
 /* #endregion */
@@ -1391,6 +1468,7 @@ html, body,
     padding: 0px;
     font-family: monospace, 'Monaco', system-ui;
     font-size: 10pt;
+    display: none; /*REMOVE*/
 }
 
 .sheet-rolltemplate-pcheck .sheet-temp_body {
@@ -1537,82 +1615,6 @@ html, body,
 */
 
 /* #endregion Template - Property check */
-
-/* #region Template - Weapon check */
-
-.sheet-rolltemplate-wcheck {
-    min-width: 50px;
-    margin: 0px;
-    padding: 0px;
-    font-family: monospace, 'Monaco', system-ui;
-    font-size: 10pt;
-}
-
-.sheet-rolltemplate-wcheck .sheet-temp_body {
-    display: grid;
-    grid-template-columns: auto 50px;
-    gap: 5px;
-    margin: 0px;
-    padding: 10px;
-    border-image-source: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block6.svg");
-    border-image-slice: 45% fill;
-    border-image-width: 32px;
-    border-image-outset: 8px;
-    background-image: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Back2.svg");
-    background-color: #000000;
-    background-repeat: repeat;
-    background-size: 32px;
-    animation: 4s linear infinite page-background;
-}
-
-.sheet-rolltemplate-wcheck .sheet-temp_body_1 {
-    grid-column: 1;
-}
-
-.sheet-rolltemplate-wcheck .sheet-temp_body_2 {
-    grid-column: 2;
-}
-
-.sheet-rolltemplate-wcheck .sheet-temp_header {
-    color: #dbddde;
-}
-
-.sheet-rolltemplate-wcheck .sheet-temp_description {
-    color: #999999;
-}
-
-.sheet-rolltemplate-wcheck .sheet-temp_roll {
-    margin: 5px;
-    height: 40px;
-    width: 40px;
-    color: #dbddde;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-image-source: url("https://github.com/Mikhuil-Kop/Stargaze-CharacterSheet/raw/refs/heads/main/Resources/Block3.svg");
-    border-image-slice: 45% fill;
-    border-image-width: 32px;
-    border-image-outset: 8px;
-}
-
-.sheet-rolltemplate-wcheck .sheet-temp_roll .inlinerollresult {
-    background: none;
-    border: none;
-}
-
-.sheet-rolltemplate-wcheck .sheet-temp_roll .fullcrit {
-    color: rgb(0, 200, 0);
-}
-
-.sheet-rolltemplate-wcheck .sheet-temp_roll .fullfail {
-    color: rgb(200, 0, 0);
-}
-
-.sheet-rolltemplate-wcheck .sheet-temp_roll .importantroll {
-    color: rgb(0, 153, 200);
-}
-
-/* #endregion Templates */
 
 /* #region Console */
 

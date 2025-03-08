@@ -16,12 +16,12 @@
 
         <div class="sheet-content">
             <!-- Metadata -->
-            <input class="sheet-tabstoggle" type="hidden" name="attr_characterSheetTab" value="profile" />
+            <input class="sheet-tabstoggle" type="hidden" name="attr_characterSheetTab" value="battle" />
             <!-- Sheet -->
             <div class="sheet-header">
-                <input class="sheet-header_input sheet-input_small" type="text" name="attr_name" placeholder="Имя">
-                <input class="sheet-header_input sheet-input_small" type="text" name="attr_class1" placeholder="Класс 1">
-                <input class="sheet-header_input sheet-input_small" type="text" name="attr_class2" placeholder="Класс 2">
+                <input class="sheet-header_input sheet-input_mid" type="text" name="attr_name" placeholder="Имя">
+                <input class="sheet-header_input sheet-input_mid" type="text" name="attr_class1" placeholder="Класс 1">
+                <input class="sheet-header_input sheet-input_mid" type="text" name="attr_class2" placeholder="Класс 2">
                 <div class="sheet-header_space"></div>
                 <div class="sheet-header_toggles">
                     <button class="sheet-button sheet-toggle sheet-button0" type="action" name="act_character">Персонаж</button>
@@ -266,39 +266,68 @@
                 </div>
                 <div class="sheet-page_main_footer">
                     <div class="sheet-footer_area sheet-inventory-ship-area">
-                        <button class="sheet-footer_area_title sheet-inventory-ship-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ На корабле ]</button>
+                        <button class="sheet-footer_area_title sheet-inventory-ship-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ На корабле ]</button>
                         <textarea class="sheet-footer_area_text sheet-inventory-ship-area_text sheet-text-area"></textarea>
                     </div>
                     <div class="sheet-footer_area sheet-inventory-stock-area">
-                        <button class="sheet-footer_area_title sheet-inventory-stock-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ На складе ]</button>
+                        <button class="sheet-footer_area_title sheet-inventory-stock-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ На складе ]</button>
                         <textarea class="sheet-footer_area_text sheet-inventory-stock-area_text sheet-text-area"></textarea>
                     </div>
                     <div class="sheet-footer_area sheet-inventory-personal-area">
-                        <button class="sheet-footer_area_title sheet-inventory-personal-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ Личные ]</button>
+                        <button class="sheet-footer_area_title sheet-inventory-personal-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ Личные ]</button>
                         <textarea class="sheet-footer_area_text sheet-inventory-personal-area_text sheet-text-area"></textarea>
                     </div>
                     <div class="sheet-footer_area sheet-inventory-instruments-area">
-                        <button class="sheet-footer_area_title sheet-inventory-instruments-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ Инструменты ]</button>
+                        <button class="sheet-footer_area_title sheet-inventory-instruments-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ Инструменты ]</button>
                         <textarea class="sheet-footer_area_text sheet-inventory-instruments-area_text sheet-text-area"></textarea>
                     </div>
                 </div>
             </div>
             <div class="sheet-page_profile sheet-block_giant">
-                <div class="">
-                    <button class="sheet-footer_area_title sheet-inventory-ship-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ На корабле ]</button>
-                    <textarea class="sheet-footer_area_text sheet-inventory-ship-area_text sheet-text-area"></textarea>
+                <div class="sheet-page_profile_properties sheet-block_big">
+                    <p class="sheet-label">Первое имя:</p>
+                    <input class="sheet-input_small" tabindex="1" type="text" name="attr_profile_name">
+                    <p class="sheet-label">Пол:</p>
+                    <input class="sheet-input_small" tabindex="9" type="text" name="attr_profile_gender">
+                    <p class="sheet-label">Глаза:</p>
+                    <input class="sheet-input_small" tabindex="5" type="text" name="attr_profile_">
+                    
+                    <p class="sheet-label">Второе имя:</p>
+                    <input class="sheet-input_small" tabindex="2" type="text" name="attr_profile_name">
+                    <p class="sheet-label">Возраст:</p>
+                    <input class="sheet-input_small" tabindex="10" type="text" name="attr_profile_age">
+                    <p class="sheet-label">Кожа:</p>
+                    <input class="sheet-input_small" tabindex="6" type="text" name="attr_profile_small">
+                    
+                    <p class="sheet-label">Фамилия:</p>
+                    <input class="sheet-input_small" tabindex="3" type="text" name="attr_profile_last">
+                    <p class="sheet-label">Рост:</p>
+                    <input class="sheet-input_small" tabindex="11" type="text" name="attr_profile_height">
+                    <p class="sheet-label">Волосы:</p>
+                    <input class="sheet-input_small" tabindex="7" type="text" name="attr_profile_hair">
+                    
+                    <p class="sheet-label">Прозвище:</p>
+                    <input class="sheet-input_small" tabindex="4" type="text" name="attr_profile_title">
+                    <p class="sheet-label">Вес:</p>
+                    <input class="sheet-input_small" tabindex="12" type="text" name="attr_profile_weight">
+                    <p class="sheet-label">Ориентация:</p>
+                    <input class="sheet-input_small" tabindex="8" type="text" name="attr_profile_orientation">
                 </div>
-                <div class="">
-                    <button class="sheet-footer_area_title sheet-inventory-ship-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ На корабле ]</button>
-                    <textarea class="sheet-footer_area_text sheet-inventory-ship-area_text sheet-text-area"></textarea>
+                <div class=".sheet-page_profile_special">
+                    <button class="sheet-footer_area_title sheet-inventory-ship-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Внешность и характер}} {{description=Здесь указано описание вашей внешности, характер и прочих отличительных черт.}}">[ Внешность и характер ]</button>
+                    <textarea class="sheet-footer_area_text sheet-inventory-ship-area_text sheet-text-area" name="act_profile_special"></textarea>
                 </div>
-                <div class="">
-                    <button class="sheet-footer_area_title sheet-inventory-ship-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ На корабле ]</button>
-                    <textarea class="sheet-footer_area_text sheet-inventory-ship-area_text sheet-text-area"></textarea>
+                <div class=".sheet-page_profile_actual">
+                    <button class="sheet-footer_area_title sheet-inventory-ship-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Актуальная информация}} {{description=Здесь указано ваши изменения, актуальные цели и заметки.}}">[ Актуальная информация ]</button>
+                    <textarea class="sheet-footer_area_text sheet-inventory-ship-area_text sheet-text-area" name="act_profile_actual"></textarea>
                 </div>
-                <div class="">
-                    <button class="sheet-footer_area_title sheet-inventory-ship-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ На корабле ]</button>
-                    <textarea class="sheet-footer_area_text sheet-inventory-ship-area_text sheet-text-area"></textarea>
+                <div class=".sheet-page_profile_story">
+                    <button class="sheet-footer_area_title sheet-inventory-ship-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Предыстория}} {{description=Здесь указано ваше прошлое.}}">[ Предыстория ]</button>
+                    <textarea class="sheet-footer_area_text sheet-inventory-ship-area_text sheet-text-area" name="act_profile_story"></textarea>
+                </div>
+                <div class=".sheet-page_profile_logs">
+                    <button class="sheet-footer_area_title sheet-inventory-ship-area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Логи}} {{description=Здесь указаны ваши записи по ходу вашего путешествия.}}">[ Логи ]</button>
+                    <textarea class="sheet-footer_area_text sheet-inventory-ship-area_text sheet-text-area" name="act_profile_logs"></textarea>
                 </div>
             </div>
             <div class="sheet-page_meds sheet-block_giant">
@@ -343,7 +372,7 @@
                 </div>
                 <div class="sheet-page_meds_body">
                     <div>
-                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 1 уровень ]</button>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 1 уровень ]</button>
                         <div class="sheet-meds_area sheet-block_list">
                             <div class="sheet-repeating-area sheet-repeating-area_meds1">
                                 <fieldset class="repeating_meds1">
@@ -370,7 +399,7 @@
                         </div>
                     </div>
                     <div>
-                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 2 уровень ]</button>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 2 уровень ]</button>
                         <div class="sheet-meds_area sheet-block_list">
                             <div class="sheet-repeating-area sheet-repeating-area_meds2">
                                 <fieldset class="repeating_meds2">
@@ -397,7 +426,7 @@
                         </div>
                     </div>
                     <div>
-                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 3 уровень ]</button>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 3 уровень ]</button>
                         <div class="sheet-meds_area sheet-block_list">
                             <div class="sheet-repeating-area sheet-repeating-area_meds3">
                                 <fieldset class="repeating_meds3">
@@ -424,7 +453,7 @@
                         </div>
                     </div>
                     <div>
-                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 4 уровень ]</button>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 4 уровень ]</button>
                         <div class="sheet-meds_area sheet-block_list">
                             <div class="sheet-repeating-area sheet-repeating-area_meds4">
                                 <fieldset class="repeating_meds4">
@@ -497,7 +526,7 @@
                 </div>
                 <div class="sheet-page_hacks_body">
                     <div>
-                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 1 уровень ]</button>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 1 уровень ]</button>
                         <div class="sheet-hacks_area sheet-block_list">
                             <div class="sheet-repeating-area sheet-repeating-area_hacks1">
                                 <fieldset class="repeating_hacks1">
@@ -524,7 +553,7 @@
                         </div>
                     </div>
                     <div>
-                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 2 уровень ]</button>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 2 уровень ]</button>
                         <div class="sheet-hacks_area sheet-block_list">
                             <div class="sheet-repeating-area sheet-repeating-area_hacks2">
                                 <fieldset class="repeating_hacks2">
@@ -551,7 +580,7 @@
                         </div>
                     </div>
                     <div>
-                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 3 уровень ]</button>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 3 уровень ]</button>
                         <div class="sheet-hacks_area sheet-block_list">
                             <div class="sheet-repeating-area sheet-repeating-area_hacks3">
                                 <fieldset class="repeating_hacks3">
@@ -578,7 +607,7 @@
                         </div>
                     </div>
                     <div>
-                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесть хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 4 уровень ]</button>
+                        <button class="sheet-footer_area_title sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Вещи на корабле}} {{description=Здесь хранится список ваших вещей, оставленных на вашем текущем транспорте.}}">[ 4 уровень ]</button>
                         <div class="sheet-hacks_area sheet-block_list">
                             <div class="sheet-repeating-area sheet-repeating-area_hacks4">
                                 <fieldset class="repeating_hacks4">
@@ -610,49 +639,27 @@
                 Хер
             </div>
             <div class="sheet-page_settings sheet-block_giant">
-                <div class="sheet-page_settings_header sheet-ribbon sheet-block_big">
-                    <div class="sheet-ribbon_input">
-                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_health">
-                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_health_max">
-                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Здоровье}} {{description=Проверка характеристики}} {{roll1=@{health}}} {{roll2=@{health_max}}}">[ ЗДР ]</button>
-                    </div>
-                    <div class="sheet-ribbon_input">
-                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_armor">
-                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_armor_max">
-                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Броня}} {{description=Проверка характеристики}} {{roll1=@{armor}}} {{roll2=@{armor_max}}}">[ БРН ]</button>
-                    </div>
-                    <div class="sheet-ribbon_input">
-                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_stamina">
-                        <input class="sheet-ribbon_input_double sheet-input_big" type="text" name="attr_stamina_max">
-                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Выносливость}} {{description=Проверка характеристики}} {{roll1=@{stamina}}} {{roll2=@{stamina_max}}}">[ ВЫН ]</button>
-                    </div>
-                    <div class="sheet-ribbon_input">
-                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_speed">
-                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Скорость}} {{description=Боевая проверка}} {{roll1=@{speed}}}">[ СКР ]</button>
-                    </div>
-                    <div class="sheet-ribbon_input">
-                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_initiative">
-                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Инициатива}} {{description=Боевая проверка}}{{roll1=[[d20 + @{initiative}]]}}">[ ИНИ ]</button>
-                    </div>
-                    <div class="sheet-ribbon_space"></div>
-                    <div class="sheet-ribbon_input">
-                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_accshot">
-                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Точная стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{accshot}]]}}">[ ТС ]</button>
-                    </div>
-                    <div class="sheet-ribbon_input">
-                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_quickshot">
-                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Быстрая стрельба}} {{description=Боевая проверка}}{{roll1=[[d20 + @{quickshot}]]}}">[ БС ]</button>
-                    </div>
-                    <div class="sheet-ribbon_input">
-                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_melee">
-                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Ближний бой}} {{description=Боевая проверка}}{{roll1=[[d20 + @{melee}]]}}">[ ББ ]</button>
-                    </div>
-                    <div class="sheet-ribbon_input">
-                        <input class="sheet-ribbon_input_single sheet-input_big" type="text" name="attr_hack">
-                        <button class="sheet-ribbon_input_caption sheet-button_text" type="roll" value="&{template:pcheck} {{character=@{name}}} {{property=Взлом}} {{description=Боевая проверка}}{{roll1=[[d20 + @{hack}]]}}">[ ВЗ ]</button>
-                    </div>
-                </div>
                 <div class="sheet-page_settings_body">
+                    <div class="sheet-page_settings_setting">
+                        <p class="sheet-label">Первое asds:</p>
+                        <input class="sheet-input_small" tabindex="1" type="text" name="attr_profile_name">
+                    </div>
+                    <div class="sheet-page_settings_setting">
+                        <p class="sheet-label">Первое имя:</p>
+                        <input class="sheet-input_small" tabindex="1" type="text" name="attr_profile_name">
+                    </div>
+                    <div class="sheet-page_settings_setting">
+                        <p class="sheet-label">Первое имя:</p>
+                        <input class="sheet-input_small" tabindex="1" type="text" name="attr_profile_name">
+                    </div>
+                    <div class="sheet-page_settings_setting">
+                        <p class="sheet-label">Первое имя:</p>
+                        <input class="sheet-input_small" tabindex="1" type="text" name="attr_profile_name">
+                    </div>
+                    <div class="sheet-page_settings_setting">
+                        <p class="sheet-label">Первое имя:</p>
+                        <input class="sheet-input_small" tabindex="1" type="text" name="attr_profile_name">
+                    </div>
                 </div>
             </div>
         </div>
@@ -671,49 +678,36 @@
                 <div class="sheet-temp_roll">{{roll1}}{{#roll2}} {{roll2}}{{/roll2}}</div>
             </div>
             {{/roll1}}
-        </div>
-    </rolltemplate>
-
-    <rolltemplate class="sheet-rolltemplate-wcheck">
-        <div class="sheet-temp_body">
-            <div class="sheet-temp_body_1">
-                <div class="sheet-temp_header">{{name}}</div>
-                <div class="sheet-temp_description">{{description}}</div>
-                <table class="sheet-template_table">
-                    <tr class="sheet-table-header">
-                        <th class="sheet-table-left sheet-table-bold">Условия</th>
-                        <th class="sheet-table-right">0-10</th>
-                        <th class="sheet-table-right">10-20</th>
-                        <th class="sheet-table-right">20-30</th>
-                        <th class="sheet-table-right">30-100</th>
-                    </tr>
-                    <tr>
-                        <td class="sheet-table-left">Обычный</td>
-                        <td class="sheet-table-right">10</td>
-                        <td class="sheet-table-right">15</td>
-                        <td class="sheet-table-right">13</td>
-                        <td class="sheet-table-right">12</td>
-                    </tr>
-                    <tr>
-                        <td class="sheet-table-left">Обычный</td>
-                        <td class="sheet-table-right">5</td>
-                        <td class="sheet-table-right">6</td>
-                        <td class="sheet-table-right">7</td>
-                        <td class="sheet-table-right">12</td>
-                    </tr>
-                    <tr>
-                        <td class="sheet-table-left">Обычный</td>
-                        <td class="sheet-table-right">15</td>
-                        <td class="sheet-table-right">22</td>
-                        <td class="sheet-table-right">31</td>
-                        <td class="sheet-table-right">10</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="sheet-temp_body_2">
-                <div class="sheet-temp_roll">{{theroll1}}</div>
-                <div class="sheet-temp_roll">{{theroll2}}</div>
-            </div>
+            <table class="sheet-template_table">
+                <tr class="sheet-table-header">
+                    <th class="sheet-table-left sheet-table-bold">Условия</th>
+                    <th class="sheet-table-right">0-10</th>
+                    <th class="sheet-table-right">10-20</th>
+                    <th class="sheet-table-right">20-30</th>
+                    <th class="sheet-table-right">30-100</th>
+                </tr>
+                <tr>
+                    <td class="sheet-table-left">Обычный</td>
+                    <td class="sheet-table-right">10</td>
+                    <td class="sheet-table-right">15</td>
+                    <td class="sheet-table-right">13</td>
+                    <td class="sheet-table-right">12</td>
+                </tr>
+                <tr>
+                    <td class="sheet-table-left">Обычный</td>
+                    <td class="sheet-table-right">5</td>
+                    <td class="sheet-table-right">6</td>
+                    <td class="sheet-table-right">7</td>
+                    <td class="sheet-table-right">12</td>
+                </tr>
+                <tr>
+                    <td class="sheet-table-left">Обычный</td>
+                    <td class="sheet-table-right">15</td>
+                    <td class="sheet-table-right">22</td>
+                    <td class="sheet-table-right">31</td>
+                    <td class="sheet-table-right">10</td>
+                </tr>
+            </table>
         </div>
     </rolltemplate>
 
